@@ -8,4 +8,4 @@ So my friend just made a new image format and asked me to give him a test file, 
 
 ## Solution
 
-following [main.ipynb](patorsiang/ctf-writeups/blob/main/TCP1P-2024/Forensics/Skibidi_Format/main.ipynb)
+following [main.ipynb](patorsiang/ctf-writeups/main/TCP1P-2024/Forensics/Skibidi_Format/main.ipynb)
