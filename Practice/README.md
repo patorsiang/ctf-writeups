@@ -2,4 +2,8 @@
 
 ## Bandit
 
-![link](/Practice/bandit.md)
+[note](/Practice/bandit.md)
+
+## Pico
+
+[note](/Practice/pico.md)
