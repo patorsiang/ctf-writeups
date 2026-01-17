@@ -6,3 +6,6 @@
 STDiOCTF-2025/**
 !STDiOCTF-2025/main.ipynb
 !STDiOCTF-2025/Archive.zip
+
+# Snyk Security Extension - AI Rules (auto-generated)
+.github/instructions/snyk_rules.instructions.md
