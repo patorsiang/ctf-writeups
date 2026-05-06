@@ -1,11 +1,39 @@
+# macOS
 .DS_Store
 
-# Snyk Security Extension - AI Rules (auto-generated)
-**/.github/instructions/snyk_rules.instructions.md
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
 
-STDiOCTF-2025/**
-!STDiOCTF-2025/main.ipynb
-!STDiOCTF-2025/Archive.zip
+# Jupyter
+*.nbconvert.ipynb
 
-# Snyk Security Extension - AI Rules (auto-generated)
+# VSCode
+.vscode/
+
+# Logs
+*.log
+
+# Archives / binaries
+*.zip
+*.tar
+*.gz
+*.7z
+*.exe
+*.out
+*.bin
+
+# pwntools / gdb
+core
+*.core
+
+# Secrets / local notes
+.env
+flag.txt
+secret*
+passwords.txt
+
+# Snyk
 .github/instructions/snyk_rules.instructions.md
