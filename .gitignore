@@ -24,6 +24,9 @@ __pycache__/
 *.exe
 *.out
 *.bin
+!events/2024/tcp1p/pwn/k/K.tar.gz
+!events/2025/la-ctf/web/mavs-fan/mavs-fan.zip
+!events/2025/stdioctf/unsorted-artifacts/Archive.zip
 
 # pwntools / gdb
 core
