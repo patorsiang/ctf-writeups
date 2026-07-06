@@ -14,9 +14,4 @@ WordPress:
 - wp-admin
 - theme editor
 
-Joomla:
-
-- templates
-- extensions
-
 This lets you attack by reasoning instead of guessing.
