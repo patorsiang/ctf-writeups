@@ -18,6 +18,19 @@ WAV triage order (cheapest → most expensive):
 
 > Example: [Cybersplash Transmission](../events/2026/cybersplash/misc/transmission/README.md) — flag drawn as text in spectrogram.
 
+## File Type Identification
+
+Always run `file` before anything else — extensions are lies, magic bytes are truth.
+
+| Tool | Purpose |
+|---|---|
+| `file <f>` | Check true type via magic bytes |
+| `binwalk <f>` | Scan for embedded file signatures at every byte offset |
+| `strings <f> \| grep misc` | Quick plaintext flag hunt |
+| `xxd <f> \| tail -20` | Check for data appended after end marker |
+
+> Example: [Cybersplash Mystery Files](../events/2026/cybersplash/misc/mystery-files/README.md) — six files with wrong extensions; only the ASCII text file had the flag.
+
 ## Image
 
 - **Appended data (JPEG):** data hidden after `FF D9` end marker. Check with `xxd file.jpg | tail -20`. Renderers stop at `FF D9`; the bytes after are invisible to viewers but still in the file.
@@ -29,5 +42,6 @@ WAV triage order (cheapest → most expensive):
 ## Repo Examples
 
 - [TCP1P Skibidi Format](../events/2024/tcp1p/forensics/skibidi-format/README.md)
-- [Cybersplash image repair](../events/2026/cybersplash/misc/image-repair/README.md)
+- [Cybersplash Mystery Files](../events/2026/cybersplash/misc/mystery-files/README.md)
+- [Cybersplash Image Repair](../events/2026/cybersplash/misc/image-repair/README.md)
 - [Cybersplash Spectrogram WaveAudio](../events/2026/cybersplash/misc/transmission/README.md)
