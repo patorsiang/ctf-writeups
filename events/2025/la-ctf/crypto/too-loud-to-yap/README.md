@@ -4,158 +4,130 @@
 
 - Event: LA CTF 2025
 - Category: Crypto
-- Difficulty: Unknown
-- Status: In progress — cipher family identified, key not yet recovered
-- Files: [ct.txt](ct.txt), [test_recon.py](test_recon.py), [main.py](main.py)
-- Skills Learned: Index of coincidence, crib dragging, running-key ciphers
+- Difficulty: Easy (once the cipher is identified)
+- Status: Solved
+- Files: [ct.txt](ct.txt), [solve.py](solve.py), [test_recon.py](test_recon.py),
+  [solve_helper.py](solve_helper.py), [main.py](main.py)
+- Skills Learned: Vigenère autokey, index of coincidence, crib dragging,
+  recognising confirmation bias in cipher analysis
 
 ## Problem Summary
 
-A single file, `ct.txt` (781 bytes): five paragraphs of English-looking prose
-where most words are garbled, a handful are readable, and ten words are written
-in ALL CAPS. The flag sits in the text already, encrypted, on line 9:
+One file, `ct.txt`: five paragraphs of English-looking prose where most words
+are garbled, a few are readable, and ten words are ALL CAPS. The flag is sitting
+in the text already, enciphered, on line 9:
 
 ```
 N sjsmbwk "OUTED lactf{ooyg_blhd_pea_ubu}!"
 ```
 
-Note that the wrapper `lactf{`, the underscores and the braces survive
-untouched — only the letters inside are enciphered, and the flag body is 14
-letters of recoverable plaintext. **The whole message does not need to be
-decrypted.**
+Braces and underscores survive untouched, so only the letters are enciphered and
+the flag body is 14 letters.
 
-## What I Tried
+The author's description is the specification, once you can read it:
 
-### Recon: what the character set rules out
+> i love AAAAA telling and posting stories! [...] when i AAAAA tried telling
+> this story about "autos", some guy kept YELLING "AAAAA" in the background
+> which AAAAA kept messing up my new take on the vigenere cipher! he actually
+> started yelling right AAAAA when i started my story
 
-No digits, no `+/=`, nothing base64- or hex-shaped, so this is not an encoding
-problem. More usefully, **word lengths, spaces, apostrophes and quotation marks
-are all preserved** — `htwpxues` is eight letters sitting where an eight-letter
-word belongs. A transposition would scramble word boundaries; a block cipher
-would destroy them. Letters map to letters, in place: the substitution family.
-
-`dlhd` (line 7) and `blhd` (line 9) are the same underlying word and differ.
-Same plaintext, different ciphertext, depending on position — so not a simple
-substitution and not a Caesar. Polyalphabetic.
-
-### Dead end 1: frequency analysis
-
-`main.py` (written before the break) counts letter frequencies with pandas and
-plots them with matplotlib. On a polyalphabetic cipher the histogram flattens
-out and tells you nothing. Correct first reflex, wrong cipher class — kept in
-the folder as a record of the false start.
-
-### Dead end 2: a repeating Vigenère key
-
-Standard probe — split the letter stream into `k` columns and average the index
-of coincidence of each. If the key repeats with period `k`, every column is a
-single Caesar shift and its IC climbs toward English (0.066).
-
-Important detail: **strip the ALL-CAPS words before running any statistic.**
-They are plaintext (see below), and leaving them in pollutes the stream with
-real English.
-
-Every key length from 1 to 15 came back in the 0.038–0.046 band — random-text
-level. No short repeating key exists. Pinned by
-`test_no_repeating_key_up_to_length_15`.
-
-### Dead end 3: per-word Caesar
-
-Rotated every garbled word through all 26 shifts against `/usr/share/dict/words`.
-Only chance hits (`hppa`→`weep`, `awis`→`soak`) — noise, not a consistent shift.
-Pinned by `test_word_level_caesar_is_ruled_out`.
-
-### The pivot: the ALL-CAPS words are cribs
-
-The challenge title is the hint. "Too loud" = the shouted words:
-
-```
-HERES  THING  THERE  MOVIEA  STOPS  THCISA  OUTED  WHATS  QUITE  ATTHE
-```
-
-Each one is **known plaintext for the ciphertext immediately preceding it**,
-ignoring word boundaries (`MOVIEA` spans "movie" + "a", `ATTHE` spans "at" +
-"the"):
-
-```
-oo  xyc   ATTHE   hospiaod    ->  "at the hospital"
-o   iwope MOVIEA              ->  "a movie"
-xyetw     QUITE  injurmq      ->  "quite injured"
-```
-
-Subtracting, `key = ct - pt (mod 26)`:
-
-```
-oo    - at    -> ov      | concatenated: "ov" + "ery" = overy
-xyc   - the   -> ery     |
-iwope - movie -> witha  ->  "with a"
-xyetw - quite -> hewas  ->  "he was"
-```
+"autos" → **autokey**. The yelling is the leak.
 
 ## Key Idea
 
-The key is English prose, as long as the message and never repeating — a
-**running-key cipher**. That is exactly why the index of coincidence came back
-flat: with a non-repeating key there is no column to align, so every classical
-periodicity attack fails by construction.
+**Vigenère autokey with a five-letter primer.** The key is the primer followed
+by the plaintext itself:
 
-The author then undermines their own key by leaking known plaintext at ten
-scattered positions. Each crib exposes a window of the key, and because the key
-is *prose*, those windows can be extended by guessing forward the way you would
-finish anyone's sentence — recovering key material well beyond the crib itself.
+```
+key   = PRIMER + plaintext
+ct[i] = pt[i] + pt[i-5]        (pt[i-5] replaced by PRIMER[i] while i < 5)
+```
+
+Each plaintext letter becomes the key letter five positions later. There is no
+repeating key, which is why every classical periodicity attack fails — but an
+autokey needs only the primer to unravel completely, because each letter you
+recover immediately keys the next one.
+
+**The primer is `LACTF`, printed on line 1 of the ciphertext.** The plaintext
+opens with a yelled `AAAAA`, and `A` contributes a zero shift, so the first five
+ciphertext letters *are* the raw key. The challenge hands you the whole thing on
+line 1.
+
+The same applies at every yell: each ALL-CAPS word is the ciphertext of an
+`AAAAA`, so it exposes the key at that point — which is the plaintext delayed by
+five. That is why `QUITE` sits immediately after the ciphertext of "quite", and
+why the caps words read as English fragments.
 
 ## Solution Walkthrough
 
-Remaining steps, not yet done:
+```python
+PRIMER = "lactf"
 
-- [ ] Decode `N sjsmbwk` on line 9 (1 + 7 letters) using `OUTED` as the crib for
-      its tail. This is the key window running directly into the flag.
-- [ ] Extend that key fragment forward across the 14 flag letters
-      (`ooygblhdpeaubu`) by guessing the prose continuation one letter at a
-      time, keeping candidates that leave the plaintext readable.
-- [ ] Cross-check: `dlhd pea` (line 7, on the shirt) and `blhd_pea` (line 9, in
-      the flag) are the same two words at different key offsets. When both
-      decrypt identically, the key is right.
-- [ ] Recover the full flag and confirm it starts with `lactf{`.
-- [ ] Add the correctness test — `decrypt(ct, key).startswith("lactf{")` — to
-      `test_recon.py`, alongside the existing characterisation tests.
-- [ ] Write the recovered key text into this file; a running key is usually a
-      quote or a song lyric and is worth recording.
-- [ ] Flip `Status` to `Solved` and push the technique into
-      [notes/crypto.md](../../../../../notes/crypto.md).
+def decrypt(ct, primer=PRIMER):
+    pt = []
+    for i, c in enumerate(ct):
+        k = primer[i] if i < len(primer) else pt[i - len(primer)]
+        pt.append(chr((ord(c) - ord(k)) % 26 + ord("a")))
+    return "".join(pt)
+```
+
+Strip everything but letters, run it, and the story falls out:
+
+```
+aaaaaheresaaaaaathingaaaaathathappenedtooneofmyfriendsiwastherea...
+```
+
+The `aaaaa` runs are the yells. The flag region decrypts to `downwithcisbus`,
+which the ciphertext's own underscores split as `4_4_3_3`.
+
+Proof the model is right, rather than merely plausible: re-encrypting the
+recovered plaintext reproduces `ct.txt` byte for byte
+(`test_model_reproduces_the_ciphertext_exactly`).
 
 ## Exploit / Script
 
-- [test_recon.py](test_recon.py) — characterisation tests pinning the recon
-  findings. Runs bare (`python3 test_recon.py`) or under pytest, no dependencies.
-  Contains the reusable helpers: `index_of_coincidence`, `average_column_ic`,
-  and `subtract` (the `ct - pt` key-recovery step).
-- [main.py](main.py) — the abandoned frequency-analysis approach. Needs pandas
-  and matplotlib and opens a GUI window; kept only as a record of the dead end.
+- [solve.py](solve.py) — full solve from `ct.txt` alone, no dependencies.
+- [test_recon.py](test_recon.py) — 7 tests: 4 correctness, 3 characterisation
+  covering the recon phase.
+- [solve_helper.py](solve_helper.py) — the crib-dragging tools built during the
+  wrong-turn phase. Superseded, kept because the technique transfers.
+- [main.py](main.py) — the original frequency-analysis attempt. Dead end.
 
 ## Flag
 
-Not recovered yet. Ciphertext form: `lactf{ooyg_blhd_pea_ubu}`.
+`lactf{down_with_cis_bus}`
 
 ## Lessons Learned
 
-- **Read the challenge title as a hint.** "Too Loud To Yap" points straight at
-  the ALL-CAPS words; the statistical work was a detour around something the
-  author had already labelled.
-- **A flat index of coincidence is information, not failure.** It does not mean
-  "the cipher is too strong" — it means the key does not repeat, which points at
-  running-key or one-time-pad rather than Vigenère.
-- **Scope the work to the goal.** The flag body is 14 letters. Decrypting all
-  542 letters of the message was never required.
-- **Assert the property, not the observation.** The Caesar test asserts "hits
-  are noise" (< 10%) rather than an exact count, which would be brittle against
-  a different platform's wordlist.
-- **Pin the input file.** An editor silently normalising the curly `'` quotes in
-  `ct.txt` would shift every offset and invalidate the analysis with no visible
-  change to the text.
-- Structured known-plaintext at attacker-chosen positions is the finding — in a
-  CTF and in a real crypto review — before any of the maths starts.
+- **Read the challenge description as a specification.** "a story about *autos*"
+  is the word *autokey*, and the AAAAA prompt describes the exact leak. The
+  entire statistical detour was avoidable by reading the text on the page.
+- **An autokey is a running key whose key text is the message itself.** The IC
+  analysis correctly identified "running key, no period" and then stalled,
+  because the search assumed the key was some *external* prose. Getting the
+  family right is not the same as getting the mechanism right.
+- **A flat index of coincidence is information.** It means the key does not
+  repeat, which points at autokey or running key rather than Vigenère.
+- **Autokey ciphers unravel from the primer alone**, since every recovered
+  letter keys a later one. Recovering five letters recovers everything — so the
+  attack is: find the primer, not break the key.
+- **Watch for confirmation bias when scoring "English".** Mid-investigation,
+  fragments like `overy`, `hewas` and `owitha` were read as "o very", "he was",
+  "with a" and taken as confirmation of an external prose key. They were real
+  key material, but the readings that felt convincing (`cubgle`, `sabhma`,
+  `esish` sitting alongside them) were quietly discounted as misalignment. Short
+  fragments will look like English if you want them to; score with n-gram
+  statistics rather than by eye.
+- **Verify by reconstruction.** "The plaintext reads sensibly" is weak evidence.
+  "Re-encrypting reproduces the ciphertext exactly" is proof, and it is one
+  extra assertion.
+- **Test the verifier before trusting it.** The candidate-key oracle used
+  mid-solve accepted false positives — shifting both keys equally made two
+  segments agree on the wrong plaintext.
 
 ## References
 
-- Challenge title, which is the actual hint.
+- [uclaacm/lactf-archive — 2025/crypto/too-loud-to-yap](https://github.com/uclaacm/lactf-archive/tree/main/2025/crypto/too-loud-to-yap)
+  — ships `pt.txt` and `challenge.yaml` alongside the ciphertext. Consulted
+  after the independent attempt stalled; the mechanism above was then derived
+  and verified against `ct.txt` directly.

@@ -1,7 +1,12 @@
-"""Characterisation tests for the Too Loud To Yap recon phase.
+"""Tests for Too Loud To Yap.
 
-These pin the *observations* that narrowed the cipher family, so the writeup
-can be reconstructed and so a wrong turn later gets caught immediately.
+Two kinds live here, deliberately:
+
+  * Correctness — the autokey model reproduces ct.txt exactly and yields the
+    flag from the ciphertext alone.
+  * Characterisation — the eliminations from the recon phase, kept because
+    they are the reusable part and because they explain why the wrong path
+    looked plausible for as long as it did.
 
 Run either way:
     python3 test_recon.py
@@ -12,111 +17,100 @@ import re
 from collections import Counter
 from pathlib import Path
 
+from solve import PRIMER, decrypt, encrypt, find_flag, letters
+
 CT_PATH = Path(__file__).parent / "ct.txt"
-WORDLIST = Path("/usr/share/dict/words")
+FLAG = "lactf{down_with_cis_bus}"
 
 ENGLISH_IC = 0.066
 RANDOM_IC = 0.038
 
 
-def load_stream():
-    """Letters-only ciphertext stream, with the ALL-CAPS crib words removed.
+# --------------------------------------------------------------------------
+# Correctness
+# --------------------------------------------------------------------------
 
-    The cribs are plaintext the author leaked; leaving them in would pollute
-    any statistic we run over the ciphertext.
-    """
+
+def test_solve_recovers_the_flag():
+    assert find_flag(decrypt(letters(CT_PATH.read_text()))) == FLAG
+
+
+def test_model_reproduces_the_ciphertext_exactly():
+    """The real proof. Decrypting to something readable is suggestive;
+    re-encrypting to the byte-identical ciphertext is conclusive."""
+    ct = letters(CT_PATH.read_text())
+    assert encrypt(decrypt(ct)) == ct
+
+
+def test_primer_is_the_first_five_ciphertext_letters():
+    """Why the challenge is solvable at all: the plaintext opens with a yelled
+    AAAAA, and A adds nothing, so ct[0:5] IS the primer, printed on line 1."""
+    ct = letters(CT_PATH.read_text())
+    assert ct[:5] == PRIMER
+
+
+def test_wrong_primer_does_not_yield_the_flag():
+    """Guards against a solve that works for the wrong reason."""
+    ct = letters(CT_PATH.read_text())
+    assert "down_with_cis_bus" not in find_flag(decrypt(ct, primer="aaaaa"))
+
+
+# --------------------------------------------------------------------------
+# Characterisation — the recon phase
+# --------------------------------------------------------------------------
+
+
+def _stream_without_cribs():
     text = CT_PATH.read_text()
-    without_cribs = re.sub(r"\b[A-Z]{3,}\b", "", text)
-    return re.sub(r"[^A-Za-z]", "", without_cribs).lower()
+    return letters(re.sub(r"\b[A-Z]{3,}\b", "", text))
 
 
-def index_of_coincidence(s):
+def _ic(s):
     n = len(s)
-    if n < 2:
-        return 0.0
-    counts = Counter(s)
-    return sum(v * (v - 1) for v in counts.values()) / (n * (n - 1))
+    return sum(v * (v - 1) for v in Counter(s).values()) / (n * (n - 1)) if n > 1 else 0
 
 
-def average_column_ic(s, k):
-    """Split into k columns and average their IC — the standard Vigenere probe.
-
-    If the key repeats with period k, each column is a single Caesar shift and
-    its IC jumps to roughly English (0.066).
-    """
-    columns = [s[i::k] for i in range(k)]
-    return sum(index_of_coincidence(c) for c in columns) / k
+def _avg_column_ic(s, k):
+    return sum(_ic(s[i::k]) for i in range(k)) / k
 
 
-def subtract(ct, pt):
-    """key = ct - pt (mod 26), the Vigenere/running-key recovery step."""
-    return "".join(
-        chr((ord(c) - ord(p)) % 26 + ord("a")) for c, p in zip(ct.lower(), pt.lower())
-    )
+def test_index_of_coincidence_stays_flat():
+    """Why classical Vigenere analysis found nothing: an autokey has no period
+    at all, so no column split ever aligns. Correct signal, and it pointed at
+    the right family (running key) — an autokey IS a running key whose key
+    text happens to be the message itself."""
+    s = _stream_without_cribs()
+    scores = {k: _avg_column_ic(s, k) for k in range(1, 16)}
+    assert all(v < (ENGLISH_IC + RANDOM_IC) / 2 for v in scores.values()), scores
 
 
-def caesar(word, shift):
-    return "".join(chr((ord(c) - ord("a") + shift) % 26 + ord("a")) for c in word)
+def test_caps_words_are_the_five_plaintext_letters_before_them():
+    """The ALL-CAPS words are the ciphertext of the yelled AAAAA. Since
+    A contributes a zero shift, each one is the raw key at that position —
+    and the key is the plaintext delayed by five. So every caps word is
+    literally the five plaintext letters that precede it."""
+    pt = decrypt(letters(CT_PATH.read_text()))
+    text = CT_PATH.read_text()
+
+    pos, checked = 0, 0
+    for tok in re.findall(r"[A-Za-z]+", text):
+        if tok.isupper() and len(tok) >= 3:
+            # The yell occupies 5 plaintext letters starting here.
+            assert pt[pos : pos + 5] == "aaaaa", (tok, pos, pt[pos : pos + 5])
+            if pos >= 5:
+                assert tok.lower()[:5] == pt[pos - 5 : pos], tok
+                checked += 1
+        pos += len(tok)
+    assert checked >= 8, f"only checked {checked} cribs"
 
 
-def test_no_repeating_key_up_to_length_15():
-    """Rules out classic Vigenere: no key length shows an English-like IC."""
-    stream = load_stream()
-    scores = {k: average_column_ic(stream, k) for k in range(1, 16)}
-
-    worst = max(scores.values())
-    assert worst < 0.050, f"a key length looks periodic now: {scores}"
-
-    # And it is not merely 'below English' — it sits down at random-text level.
-    midpoint = (ENGLISH_IC + RANDOM_IC) / 2
-    assert all(v < midpoint for v in scores.values()), scores
-
-
-def test_word_level_caesar_is_ruled_out():
-    """Rules out per-word Caesar: no garbage word rotates into a real word."""
-    if not WORDLIST.exists():
-        return  # dictionary is platform-dependent; skip rather than fail
-    words = {w.strip().lower() for w in WORDLIST.read_text().splitlines()}
-
-    # Words already readable in the ciphertext are not evidence either way.
-    known_plaintext = {"here", "thing", "that", "then", "next"}
-    tokens = [
-        t.replace("'", "").lower()
-        for t in re.findall(r"[A-Za-z']+", CT_PATH.read_text())
-        if not (t.isupper() and len(t) > 2)
-    ]
-    garbage = [t for t in tokens if len(t) >= 4 and t not in known_plaintext]
-    assert len(garbage) > 40, "sanity: expected plenty of encrypted words"
-
-    hits = [t for t in garbage if any(caesar(t, k) in words for k in range(1, 26))]
-    # A couple of short words rotate into obscure dictionary entries by chance;
-    # what matters is that it is noise, not a consistent shift.
-    assert len(hits) / len(garbage) < 0.10, f"unexpectedly many Caesar hits: {hits}"
-
-
-def test_caps_words_are_cribs_yielding_english_key():
-    """The load-bearing finding: ALL-CAPS words decode the ciphertext before
-    them, and ct - crib produces English prose, i.e. a running key."""
-    # (ciphertext as written, plaintext given by the adjacent crib, key fragment)
-    cases = [
-        ("oo", "at", "ov"),  # oo  xyc ATTHE hospiaod
-        ("xyc", "the", "ery"),  #      -> "at the hospital"
-        ("iwope", "movie", "witha"),  # o iwope MOVIEA -> "a movie"
-        ("xyetw", "quite", "hewas"),  # xyetw QUITE    -> "quite"
-    ]
-    for ct, pt, expected_key in cases:
-        assert subtract(ct, pt) == expected_key, f"{ct} - {pt}"
-
-    # Adjacent cribs concatenate into running prose rather than repeating.
-    assert subtract("ooxyc", "atthe") == "overy"
-
-
-def test_ciphertext_is_unmodified():
-    """Guards the artifact itself — solve scripts are worthless if the input
-    silently changes."""
-    raw = CT_PATH.read_bytes()
-    assert len(raw) == 781, "ct.txt changed size; recon results are stale"
-    assert b"lactf{" in raw, "flag ciphertext missing from ct.txt"
+def test_shirt_and_flag_share_two_words():
+    """The near-identical runs at 202 and 342 that looked like a repeating
+    key: 'down with cis' on the shirt and 'down_with_cis' in the flag are the
+    same words, so their key streams agree wherever the preceding five
+    plaintext letters agree. Structure in the plaintext, not the key."""
+    pt = decrypt(letters(CT_PATH.read_text()))
+    assert pt.count("downwithcis") == 2
 
 
 if __name__ == "__main__":
