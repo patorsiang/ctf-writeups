@@ -15,6 +15,6 @@ Writeups and artifacts from LA CTF 2025, organized by category.
 | Crypto | [RSAaaS](crypto/rsaaas/README.md) | Solved | RSA parameter validation |
 | Crypto | [Bigram Times](crypto/bigram-times/README.md) | TODO | Frequency analysis |
 | Crypto | [Crypto Civilization](crypto/crypto-civilization/README.md) | TODO | Source review |
-| Crypto | [Too Loud To Yap](crypto/too-loud-to-yap/README.md) | In progress | Running-key cipher, crib dragging |
+| Crypto | [Too Loud To Yap](crypto/too-loud-to-yap/README.md) | Solved | Vigenère autokey, crib dragging |
 | Misc | [Extended](misc/extended/README.md) | Solved | Cross-platform text behavior |
 | Rev | [Javascryption](rev/javascryption/README.md) | Solved | Reversing JavaScript transforms |
