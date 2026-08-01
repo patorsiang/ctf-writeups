@@ -139,6 +139,37 @@ challenge value do an `O(2^n)` scan checking membership of `target XOR
 candidate` in that table — no repeated hashing, and cheap enough to redo
 per round of an interactive protocol.
 
+## RSA: Cheap Checks Before Reaching for a Factoring Algorithm
+
+Textbook RSA (no OAEP-style padding) breaks in ways that cost far less
+than factoring `N`. Run these before anything heavier:
+
+- **Is `N` odd?** A genuine modulus is a product of two large odd
+  primes, so it must be odd. If it isn't, one "prime" is `2` — a buggy
+  key generator, not a hard problem. Factor by parity, done. Seen in
+  [EVEN RSA CAN BE BROKEN???](../practice/picogym/even-rsa-can-be-broken/README.md).
+- **Is `e` small (3, 5, ...) and is there real padding?** With no
+  padding, `c = M**e mod N` is just `M**e` once `M**e` stays under `N`
+  — no modular reduction at all. Recovering `M` is then an integer
+  `e`-th root, not a private-key operation. If `M**e` overflows `N` a
+  *few* times, search small `k` for the first `c + k*N` that's a
+  perfect `e`-th power — cheap, since `k` is small by construction
+  whenever the message is only a little larger than `N**(1/e)`. Seen in
+  [Mini RSA](../practice/picogym/mini-rsa/README.md), where the actual
+  capture needed `k=0` despite the challenge text implying `k=1` —
+  checked, not assumed.
+- **Do two ciphertexts share a modulus, or share a prime factor with
+  each other?** `gcd` of two moduli that shouldn't be related is free to
+  compute and instantly fatal if it's not 1.
+- **Is the public exponent even coprime to `phi(N)`?** If `gcd(e,
+  phi(N)) != 1`, the "encryption" isn't invertible the intended way,
+  which usually means a different door is open.
+
+None of these require touching Pollard's rho, Fermat factorization, or
+Coppersmith's method — they're all one-line checks against the public
+key alone, and picoGym's "Easy" RSA challenges are almost always exactly
+one of these, not a real factoring problem in disguise.
+
 ## Verifying a Break
 
 - **Reconstruct, don't eyeball.** "The plaintext reads sensibly" is weak.
@@ -158,3 +189,5 @@ per round of an interactive protocol.
 - [LA CTF big-e](../events/2025/la-ctf/crypto/big-e/README.md) — RSA common modulus
 - [LA CTF Extremely Convenient Breaker](../events/2025/la-ctf/crypto/extremely-convenient-breaker/README.md) — oracle interaction
 - [LA CTF RSAaaS](../events/2025/la-ctf/crypto/rsaaas/README.md) — RSA key validation
+- [picoGym EVEN RSA CAN BE BROKEN???](../practice/picogym/even-rsa-can-be-broken/README.md) — modulus parity reveals p=2
+- [picoGym Mini RSA](../practice/picogym/mini-rsa/README.md) — low-public-exponent attack, integer nth-root recovery
