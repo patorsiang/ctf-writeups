@@ -77,6 +77,35 @@ Two traps, both hit in [Too Loud To Yap](../events/2025/la-ctf/crypto/too-loud-t
   `cubgle` and `sabhma` get quietly written off as misalignment. Score
   candidates with n-gram statistics, not by eye.
 
+## Multiplicative Ciphers mod p — Counting Preimages Before Brute-Forcing
+
+When a cipher raises characters to a power mod a prime `p` (or otherwise
+applies a fixed exponent map on `(Z/pZ)*`, the group of nonzero residues,
+which is cyclic of order `p-1`), check `gcd(exponent, p-1)` **before**
+writing any search code:
+
+- `gcd = 1` → the map is a bijection (injective), unique decryption.
+- `gcd = d > 1` → the map is exactly `d`-to-1. Every output has precisely
+  `d` valid preimages — not "some", not "up to `d`", exactly `d`. This is
+  a group-theory fact, checkable by hand in one line, not something to
+  discover by brute-forcing and being surprised at the count.
+
+**Why this matters operationally:** ambiguity at *each* symbol is cheap
+(`d` candidates, `d` small); ambiguity across a whole message is not, if
+you combine per-symbol candidates with a Cartesian product. `d` candidates
+at `n` independent positions is `d^n` combined guesses — solve each
+position's ambiguity locally (a per-symbol disambiguator, a known
+crib, a decoy the challenge hands you) and never materialize the full
+product. Hit this exactly in
+[Bigram Times](../events/2025/la-ctf/crypto/bigram-times/README.md): cubing
+mod 67 is 3-to-1 since `gcd(3, 66) = 3`, and the naive Cartesian-product
+solve (`3^24` candidates) exhausts memory instead of finishing.
+
+**Practical move:** precompute a reverse lookup table over the whole
+(small) input domain *once* — brute-forcing every possible input, grouping
+by output — rather than re-deriving preimages per ciphertext symbol. The
+domain is fixed and small; the reuse is free.
+
 ## Verifying a Break
 
 - **Reconstruct, don't eyeball.** "The plaintext reads sensibly" is weak.
@@ -91,6 +120,7 @@ Two traps, both hit in [Too Loud To Yap](../events/2025/la-ctf/crypto/too-loud-t
 ## Repo Examples
 
 - [LA CTF Too Loud To Yap](../events/2025/la-ctf/crypto/too-loud-to-yap/README.md) — Vigenère autokey, primer recovery
+- [LA CTF Bigram Times](../events/2025/la-ctf/crypto/bigram-times/README.md) — multiplicative cipher mod 67, counting preimages via group theory
 - [LA CTF big-e](../events/2025/la-ctf/crypto/big-e/README.md) — RSA common modulus
 - [LA CTF Extremely Convenient Breaker](../events/2025/la-ctf/crypto/extremely-convenient-breaker/README.md) — oracle interaction
 - [LA CTF RSAaaS](../events/2025/la-ctf/crypto/rsaaas/README.md) — RSA key validation

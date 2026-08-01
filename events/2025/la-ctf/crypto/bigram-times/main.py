@@ -1,3 +1,9 @@
+# DEAD END — do not run. Each ciphertext bigram has exactly 3 valid
+# preimages, and this takes the Cartesian product across all 24 bigrams:
+# 3^24 ~= 2.8e11 candidate flags. It will not finish; it will consume all
+# available RAM building `possible_flags` first. Kept for the lesson (see
+# README.md). The working solve is solve.py.
+
 from itertools import product
 
 # Given character set
