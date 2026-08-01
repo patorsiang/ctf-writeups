@@ -38,6 +38,12 @@ Each challenge `README.md` should include:
 
 Use [templates/challenge-readme.md](../templates/challenge-readme.md) or [templates/challenge-writeup.md](../templates/challenge-writeup.md) as the starting point.
 
+For CyLab Academy learning-path work, use [templates/cylabacademy-challenge-readme.md](../templates/cylabacademy-challenge-readme.md) and save challenges under:
+
+```text
+practice/cylabacademy/challenges/<learning-path>/<challenge>/
+```
+
 ## Notebook Guidance
 
 Use `main.ipynb` when the analysis benefits from incremental cells, rich output, plots, screenshots, or exploratory scripts.
@@ -60,6 +66,8 @@ Use these labels consistently:
 | `In progress` | Useful notes exist, but the writeup still needs cleanup or verification |
 | `TODO` | Staged challenge with little or no analysis yet |
 | `Reference` | Supporting note, template, or index page |
+
+CyLab Academy learning-path work may also use `Queued`, `Attempting`, `Review`, and `Skipped` as defined in [practice/cylabacademy/README.md](../practice/cylabacademy/README.md).
 
 Do not mark a challenge `Solved` until the writeup explains the reasoning clearly enough for another learner to follow.
 

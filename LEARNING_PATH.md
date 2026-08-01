@@ -2,6 +2,8 @@
 
 This path is meant to turn the repo into a study system. The goal is to grow from solving isolated beginner challenges to writing clear, repeatable, senior-level analysis.
 
+New structured practice should be tracked in [practice/cylabacademy](practice/cylabacademy). Older picoGym material remains in [practice/picogym](practice/picogym) as a legacy archive and can be linked into CyLab Academy learning paths when useful.
+
 ## Stage 1: Foundations
 
 - Linux shell: navigation, file inspection, permissions, processes, networking basics.
@@ -11,6 +13,7 @@ This path is meant to turn the repo into a study system. The goal is to grow fro
 
 Practice targets:
 
+- [CyLab Academy queue](practice/cylabacademy/queue.md)
 - [OverTheWire Bandit](practice/overthewire/bandit/README.md)
 - [picoGym unsorted artifacts](practice/picogym/unsorted-artifacts/README.md)
 
@@ -24,6 +27,7 @@ Practice targets:
 
 Practice targets:
 
+- [CyLab Academy learning paths](practice/cylabacademy/learning-paths/README.md)
 - [picoGym format-string-0](practice/picogym/format-string-0/README.md)
 - [LA CTF crypto](events/2025/la-ctf/crypto)
 - [TCP1P Skibidi Format](events/2024/tcp1p/forensics/skibidi-format/README.md)

@@ -17,9 +17,18 @@ This is a personal learning repo, but every entry should be readable by someone 
 - Solve scripts: small programs used to recover the flag.
 - Generated output: keep only if it helps explain or verify the solution.
 
+For new CyLab Academy work, use:
+
+```text
+practice/cylabacademy/challenges/<learning-path>/<challenge-name>/
+```
+
+Start from [templates/cylabacademy-challenge-readme.md](templates/cylabacademy-challenge-readme.md), and track planned work in [practice/cylabacademy/queue.md](practice/cylabacademy/queue.md).
+
 ## Writeup Rules
 
 - Mark incomplete work as `Status: TODO`.
+- For CyLab Academy queue items, use `Queued` before starting and `Attempting` while actively working.
 - Do not invent missing points, descriptions, or difficulty.
 - Keep flags visible because this is a writeup archive.
 - Explain beginner context where useful, then end with the professional takeaway.

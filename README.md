@@ -46,9 +46,11 @@ events/
   <year>/<event>/<category>/<challenge>/
 practice/
   <platform>/<challenge>/
+  cylabacademy/challenges/<learning-path>/<challenge>/
 notes/
   <topic>.md
 templates/
+  cylabacademy-challenge-readme.md
   challenge-readme.md
   challenge-writeup.md
   challenge-writeup.ipynb
@@ -59,7 +61,7 @@ docs/
 | Area | Purpose |
 | --- | --- |
 | [events](events) | Writeups from time-boxed CTF events, organized by year, event, category, and challenge |
-| [practice](practice) | Platform practice, lab work, and incomplete exercises |
+| [practice](practice) | Platform practice, CyLab Academy learning-path work, lab work, and incomplete exercises |
 | [notes](notes) | Reusable topic notes and links back to examples |
 | [templates](templates) | Starting points for new challenge README and notebook writeups |
 | [docs/CTF_WRITEUP_GUIDE.md](docs/CTF_WRITEUP_GUIDE.md) | Quality guide for future writeups |
@@ -77,7 +79,8 @@ docs/
 
 | Platform | Notes |
 | --- | --- |
-| [picoGym](practice/picogym/README.md) | Challenge files, scripts, notebooks, and learning notes |
+| [CyLab Academy](practice/cylabacademy/README.md) | New learning-path challenge queue, indexes, and writeups |
+| [picoGym](practice/picogym/README.md) | Legacy picoGym challenge files, scripts, notebooks, and learning notes |
 | [OverTheWire](practice/overthewire/README.md) | Bandit notes and Linux fundamentals practice |
 | [SecPlayground](practice/secplayground/README.md) | Web security playground notes |
 
@@ -136,10 +139,11 @@ This is a personal learning repo, but future entries should follow the standards
 Before adding a new writeup:
 
 1. Create a challenge folder using lowercase kebab-case.
-2. Start from [templates/challenge-readme.md](templates/challenge-readme.md) or [templates/challenge-writeup.md](templates/challenge-writeup.md).
-3. Add a notebook only when it improves reproducibility or explanation.
-4. Keep original challenge artifacts separate from generated output.
-5. Add links from the event index, practice index, or topic notes when useful.
+2. For new CyLab Academy work, add the item to [practice/cylabacademy/queue.md](practice/cylabacademy/queue.md) and create it under `practice/cylabacademy/challenges/<learning-path>/<challenge>/`.
+3. Start from [templates/cylabacademy-challenge-readme.md](templates/cylabacademy-challenge-readme.md), [templates/challenge-readme.md](templates/challenge-readme.md), or [templates/challenge-writeup.md](templates/challenge-writeup.md).
+4. Add a notebook only when it improves reproducibility or explanation.
+5. Keep original challenge artifacts separate from generated output.
+6. Add links from the event index, practice index, learning-path index, or topic notes when useful.
 
 ## Status
 

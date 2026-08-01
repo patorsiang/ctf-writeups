@@ -1,0 +1,31 @@
+# CyLab Academy Learning Paths
+
+This index organizes CyLab Academy work by platform learning path first, then by technical category. Keep it short and link to the challenge folder when a writeup exists.
+
+## Current Focus
+
+- Path: The Beginner's Guide to the Challenge Library
+- Goal: Build basic command-line confidence for reading files and connecting to services.
+- Current challenge:
+- Blocked by:
+
+## Path Index
+
+| Learning Path | Challenge | Category | Status | Writeup |
+| --- | --- | --- | --- | --- |
+| The Beginner's Guide to the Challenge Library | obedient-cat | General | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/obedient-cat/README.md) |
+| The Beginner's Guide to the Challenge Library | super-ssh | Networking | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/super-ssh/README.md) |
+| The Beginner's Guide to the Challenge Library | whats-a-net-cat | Networking | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/whats-a-net-cat/README.md) |
+
+## Cross-Links To Legacy picoGym
+
+Older picoGym writeups that still fit the current path can be linked here.
+
+| Learning Path | Legacy Challenge | Category | Status | Link |
+| --- | --- | --- | --- | --- |
+| Cryptography | mini-rsa | Crypto | Solved | [legacy picoGym writeup](../../picogym/mini-rsa/README.md) |
+| Cryptography | even-rsa-can-be-broken | Crypto | Solved | [legacy picoGym writeup](../../picogym/even-rsa-can-be-broken/README.md) |
+
+## Review Rhythm
+
+After every 3-5 solved challenges, update the relevant topic note in [../../../notes](../../../notes) with one reusable lesson. This keeps challenge solving connected to long-term skill growth.
