@@ -106,6 +106,39 @@ solve (`3^24` candidates) exhausts memory instead of finishing.
 by output — rather than re-deriving preimages per ciphertext symbol. The
 domain is fixed and small; the reuse is free.
 
+## Bit Commitment via PRG — When the Image Is Sparse
+
+A commitment scheme built as `com = PRG(seed)` (open by revealing `seed`)
+is only as binding as the PRG's image is *hard to hit twice*. If the PRG
+stretches an `n`-bit seed to an `m`-bit output with `n < m`, the image has
+only `2^n` points inside a `2^m` codomain — sparse, but not sparse enough
+to stop a birthday attack once the attacker gets to combine **two**
+independent evaluations (e.g. one XORed against a value the protocol
+reveals to them, like `PRG(s0) == PRG(s1) XOR y`).
+
+**Check the pair-count, not just "the domain is smaller than the
+codomain":** the expected number of unordered pairs `(s0, s1)` from the
+`2^n`-point image satisfying a fixed target relation is
+`C(2^n, 2) / 2^m ≈ 2^(2n-1) / 2^m`. That is non-negligible exactly when
+`2n` approaches `m` — here `n=16, m=32` gives an expected ~0.5 pairs per
+target, i.e. a solution exists roughly `1 - e^-0.5 ≈ 39%` of the time.
+Mind the ordered-vs-unordered trap: `(s0,s1)` and `(s1,s0)` are the same
+discovery, so treating them as independent doubles the apparent rate.
+
+**Why this breaks binding, not just secrecy:** if the protocol reveals
+any value the attacker can fold into a second PRG evaluation *before*
+they must commit (here, `y` — needed for one of two possible openings —
+arrives before the commitment is requested), the attacker can search for
+an equivocal commitment that opens as *either* answer, and was never
+actually bound to one. Seen in
+[Crypto Civilization](../events/2025/la-ctf/crypto/crypto-civilization/README.md).
+
+**Practical move:** precompute the full `seed -> PRG(seed)` table once (the
+seed space is the whole point of being small), then for each fresh
+challenge value do an `O(2^n)` scan checking membership of `target XOR
+candidate` in that table — no repeated hashing, and cheap enough to redo
+per round of an interactive protocol.
+
 ## Verifying a Break
 
 - **Reconstruct, don't eyeball.** "The plaintext reads sensibly" is weak.
@@ -121,6 +154,7 @@ domain is fixed and small; the reuse is free.
 
 - [LA CTF Too Loud To Yap](../events/2025/la-ctf/crypto/too-loud-to-yap/README.md) — Vigenère autokey, primer recovery
 - [LA CTF Bigram Times](../events/2025/la-ctf/crypto/bigram-times/README.md) — multiplicative cipher mod 67, counting preimages via group theory
+- [LA CTF Crypto Civilization](../events/2025/la-ctf/crypto/crypto-civilization/README.md) — Naor bit commitment, birthday attack on PRG image sparsity, equivocation
 - [LA CTF big-e](../events/2025/la-ctf/crypto/big-e/README.md) — RSA common modulus
 - [LA CTF Extremely Convenient Breaker](../events/2025/la-ctf/crypto/extremely-convenient-breaker/README.md) — oracle interaction
 - [LA CTF RSAaaS](../events/2025/la-ctf/crypto/rsaaas/README.md) — RSA key validation

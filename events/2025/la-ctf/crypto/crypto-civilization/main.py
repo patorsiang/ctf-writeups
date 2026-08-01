@@ -1,3 +1,16 @@
+# DEAD END — do not run. Two independent problems:
+#   1. `com = os.urandom(4)` picks a commitment uniformly at random from
+#      2**32 values, but PRG's image only has 2**16 points in it. The odds
+#      that a random com is even IN the image (so any decom can open the
+#      chicken branch) are 2**16 / 2**32 = 2**-16 — this crashes with a
+#      KeyError almost immediately.
+#   2. It targets chall.lac.tf, the live LA CTF 2025 server, which is no
+#      longer reachable now that the event has ended.
+# The working solve doesn't guess a random commitment at all — it looks
+# for two seeds whose PRG outputs XOR to the round's `y`, which is what
+# actually breaks the scheme's binding property. See solve.py and
+# README.md.
+
 import hashlib
 import os
 import socket
