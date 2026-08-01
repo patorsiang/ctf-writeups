@@ -14,6 +14,9 @@ picoGym material grouped by identifiable challenge or learning area.
 | [binary-exploitation](binary-exploitation/README.md) | TODO | C binaries and source |
 | [web-snapshots](web-snapshots/README.md) | TODO | Web challenge screenshots |
 | [unsorted-artifacts](unsorted-artifacts/README.md) | In progress | Notebook writeups for web, crypto, rev, pwn, and forensics practice |
+| [obedient-cat](obedient-cat/README.md) | Solved | Basic file inspection, `cat` |
+| [super-ssh](super-ssh/README.md) | Solved | SSH login, non-default ports |
+| [whats-a-net-cat](whats-a-net-cat/README.md) | Solved | Netcat, TCP service connections |
 | [even-rsa-can-be-broken](even-rsa-can-be-broken/README.md) | Solved | RSA modulus parity as a factoring shortcut |
 | [mini-rsa](mini-rsa/README.md) | Solved | Low-public-exponent RSA, integer nth-root recovery |
 
