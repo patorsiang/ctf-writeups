@@ -20,6 +20,10 @@ Use this file as the lightweight inbox for new learning challenges.
 | 2026-08-01 | The Beginner's Guide to the Challenge Library | obedient-cat | [writeup](challenges/beginners-guide-to-the-challenge-library/obedient-cat/README.md) | Use `cat` to inspect a simple text file. |
 | 2026-08-01 | The Beginner's Guide to the Challenge Library | super-ssh | [writeup](challenges/beginners-guide-to-the-challenge-library/super-ssh/README.md) | Use `ssh -p` when the service runs on a non-default port. |
 | 2026-08-01 | The Beginner's Guide to the Challenge Library | whats-a-net-cat | [writeup](challenges/beginners-guide-to-the-challenge-library/whats-a-net-cat/README.md) | Use `nc <host> <port>` to connect to a raw TCP service. |
+| 2026-08-04 | The Beginner's Guide to the Challenge Library | mod-26 | [writeup](challenges/beginners-guide-to-the-challenge-library/mod-26/README.md) | Read the Caesar shift off a known crib; ROT13 is its own inverse. |
+| 2026-08-04 | The Beginner's Guide to the Challenge Library | warmed-up | [writeup](challenges/beginners-guide-to-the-challenge-library/warmed-up/README.md) | `0x` is a prefix, not a digit; one byte is exactly 2 hex digits. |
+| 2026-08-04 | The Beginner's Guide to the Challenge Library | 2warm | [writeup](challenges/beginners-guide-to-the-challenge-library/2warm/README.md) | Repeated division gives remainders bottom-up; 3 bits = 1 octal digit. |
+| 2026-08-04 | The Beginner's Guide to the Challenge Library | bases | [writeup](challenges/beginners-guide-to-the-challenge-library/bases/README.md) | Base64 is a transport encoding, not a number base; 6 bits = 1 char. |
 
 ## Parking Lot
 

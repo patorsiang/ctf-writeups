@@ -16,6 +16,10 @@ This index organizes CyLab Academy work by platform learning path first, then by
 | The Beginner's Guide to the Challenge Library | obedient-cat | General | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/obedient-cat/README.md) |
 | The Beginner's Guide to the Challenge Library | super-ssh | Networking | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/super-ssh/README.md) |
 | The Beginner's Guide to the Challenge Library | whats-a-net-cat | Networking | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/whats-a-net-cat/README.md) |
+| The Beginner's Guide to the Challenge Library | mod-26 | Crypto | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/mod-26/README.md) |
+| The Beginner's Guide to the Challenge Library | warmed-up | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/warmed-up/README.md) |
+| The Beginner's Guide to the Challenge Library | 2warm | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/2warm/README.md) |
+| The Beginner's Guide to the Challenge Library | bases | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/bases/README.md) |
 
 ## Cross-Links To Legacy picoGym
 

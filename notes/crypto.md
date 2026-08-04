@@ -4,6 +4,9 @@
 
 - Identify whether data is encoded, encrypted, hashed, or compressed.
 - Check common encodings first: hex, base64, URL encoding, ASCII, binary.
+  Identify them by alphabet and length before opening a tool — see the
+  table in [general.md](general.md#identifying-an-encoded-blob-by-alphabet-and-length).
+  Encoding has no key and is not a finding; decode it and keep going.
 - For RSA, record `n`, `e`, ciphertexts, and any relationship between exponents or moduli.
 - For oracle challenges, write down exactly what the service reveals and what input you control.
 - **Read the challenge description and title as a specification.** Authors hide
@@ -37,6 +40,36 @@ def avg_column_ic(s, k):        # peak here => key length k
    repeat. Go to running key / autokey. Note IC needs roughly 20+ letters per
    column to mean anything — with a 500-letter sample, `k > 25` is untestable,
    so "no period found" only covers the range you actually had power to test.
+
+## Caesar / ROT13 — Read the Shift Off a Crib
+
+The cheapest branch of step 3. If the cipher is monoalphabetic *and* the
+challenge format hands you a known prefix (CTF flags almost always do —
+`picoCTF{`, `flag{`), don't guess the key and don't reach for frequency
+analysis on a 50-character string. Line the crib up and subtract:
+
+```python
+shift = (ord(ct[0]) - ord(crib[0])) % 26   # verify across the whole crib
+```
+
+Confirm the *same* offset holds for every crib character. If it doesn't,
+that's the signal it isn't a Caesar at all — a real answer, arrived at in
+one step. Brute-forcing all 26 keys works too and costs nothing; the point
+is that "it's probably ROT13" is a guess, while the crib is a derivation.
+
+**ROT13 is an involution.** `13 + 13 ≡ 0 (mod 26)`, so encode and decode
+are the same operation and applying it twice returns the input untouched.
+More generally, Caesar shifts compose additively — `shift(a)` then
+`shift(b)` equals `shift(a+b mod 26)`. Composing a cipher with itself is
+not automatically stronger, and for an involution it is exactly the
+identity. Seen in
+[Mod 26](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/mod-26/README.md),
+whose flag jokes about "2 rounds of rot13".
+
+Watch the alphabet boundary: only `A-Za-z` participate in mod-26
+arithmetic. Braces, digits, underscores and punctuation must pass through
+untouched, which is exactly why the flag's shape survives and gives you
+the crib in the first place.
 
 ## Autokey — the one worth memorising
 
@@ -183,6 +216,7 @@ one of these, not a real factoring problem in disguise.
 
 ## Repo Examples
 
+- [CyLab Mod 26](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/mod-26/README.md) — ROT13, shift recovered from a crib, involution property
 - [LA CTF Too Loud To Yap](../events/2025/la-ctf/crypto/too-loud-to-yap/README.md) — Vigenère autokey, primer recovery
 - [LA CTF Bigram Times](../events/2025/la-ctf/crypto/bigram-times/README.md) — multiplicative cipher mod 67, counting preimages via group theory
 - [LA CTF Crypto Civilization](../events/2025/la-ctf/crypto/crypto-civilization/README.md) — Naor bit commitment, birthday attack on PRG image sparsity, equivocation
