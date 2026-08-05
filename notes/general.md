@@ -163,6 +163,63 @@ Check these before opening a tool:
 If a standard decode yields garbage, suspect the **variant** before
 suspecting the data.
 
+## Running A Provided Binary
+
+`file` first, always. One command answers the four things that decide how
+the rest of the challenge goes:
+
+```text
+ELF 64-bit LSB pie executable, x86-64, dynamically linked,
+interpreter /lib64/ld-linux-x86-64.so.2, with debug_info, not stripped
+```
+
+| Field | Decides |
+| --- | --- |
+| `ELF` / `Mach-O` / `PE` | which OS family can load it |
+| `x86-64` / `aarch64` | which CPU can execute it |
+| `pie` | load base is randomised (ASLR) — in pwn, whether a leak is needed first |
+| `dynamically linked` + interpreter | needs glibc/musl present; picking the wrong libc image fails confusingly |
+| `stripped` / `not stripped` | whether function names survived — reversing effort, and whether `strings` finds anything |
+
+### Error Triage: Three Lookalikes
+
+| Message | Actual meaning | Fix |
+| --- | --- | --- |
+| `no such file or directory` | wrong path or misspelled name | check `pwd` and spelling |
+| `permission denied` | file present, execute bit off | `chmod +x` |
+| `exec format error` | present and executable, wrong OS/CPU | run it somewhere matching |
+
+Fourth case, Linux-only and genuinely confusing: `no such file or
+directory` on a binary that plainly exists means the **dynamic loader**
+named in the `interpreter` field is missing — the ENOENT is about
+`ld-linux`, not about the binary.
+
+Why `./` is required: the shell resolves bare names against `$PATH`, and
+`.` is deliberately absent from it. Otherwise dropping a file named `ls`
+into a directory would hijack the next `ls` run there.
+
+### Running A Foreign Binary In Docker
+
+The universal one-liner — an emulation fix *and* a disposable sandbox,
+which is the right default for untrusted CTF binaries:
+
+```bash
+docker run --rm --platform linux/amd64 \
+  -v "$PWD:/w" -w /w \
+  debian:stable-slim ./binary --help
+```
+
+- `--platform linux/amd64` solves OS and architecture together. This is
+  the same flag that fixes an Apple Silicon build crashing on an x86
+  server — "works on my machine" has a precise mechanical cause.
+- `-v` punches a hole in the container's isolation. Mount the narrowest
+  directory that works; "just mount `$HOME`" is a real security finding.
+- Emulation (Rosetta/QEMU) is a runtime tax. Prefer native
+  `linux/arm64` images when the choice exists.
+- Match the libc: glibc binaries need Debian/Ubuntu, not Alpine.
+
+Seen in [Wave a Flag](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/wave-a-flag/README.md).
+
 ## CyberChef: Number Ops vs Byte Ops
 
 [CyberChef](https://gchq.github.io/CyberChef/) is the browser tool the
@@ -231,6 +288,7 @@ That last row is worth memorising: ASCII case differs by exactly one bit
 - [CyLab Warmed Up](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/warmed-up/README.md) — hex to decimal, positional notation
 - [CyLab 2warm](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/2warm/README.md) — decimal to binary, powers of two, bit regrouping
 - [CyLab Bases](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/bases/README.md) — base64 as 6-bit regrouping, encoding vs number base
+- [CyLab Wave a Flag](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/wave-a-flag/README.md) — help flags, exec format error, Docker `--platform`
 - [CyLab obedient-cat](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/obedient-cat/README.md) — reading a provided file
 - [CyLab super-ssh](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/super-ssh/README.md) — `ssh -p` on a non-default port
 - [CyLab whats-a-net-cat](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/whats-a-net-cat/README.md) — raw TCP with `nc`

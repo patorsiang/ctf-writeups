@@ -24,6 +24,7 @@ Use this file as the lightweight inbox for new learning challenges.
 | 2026-08-04 | The Beginner's Guide to the Challenge Library | warmed-up | [writeup](challenges/beginners-guide-to-the-challenge-library/warmed-up/README.md) | `0x` is a prefix, not a digit; one byte is exactly 2 hex digits. |
 | 2026-08-04 | The Beginner's Guide to the Challenge Library | 2warm | [writeup](challenges/beginners-guide-to-the-challenge-library/2warm/README.md) | Repeated division gives remainders bottom-up; 3 bits = 1 octal digit. |
 | 2026-08-04 | The Beginner's Guide to the Challenge Library | bases | [writeup](challenges/beginners-guide-to-the-challenge-library/bases/README.md) | Base64 is a transport encoding, not a number base; 6 bits = 1 char. |
+| 2026-08-05 | The Beginner's Guide to the Challenge Library | wave-a-flag | [writeup](challenges/beginners-guide-to-the-challenge-library/wave-a-flag/README.md) | `exec format error` = wrong OS/CPU; `docker --platform` runs it anyway. |
 
 ## Parking Lot
 
