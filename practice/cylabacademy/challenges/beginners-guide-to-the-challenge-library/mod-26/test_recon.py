@@ -14,8 +14,10 @@ Run either way:
 """
 
 import string
+import tempfile
+from pathlib import Path
 
-from solve import CIPHERTEXT, caesar, find_shift, rot13
+from solve import CIPHERTEXT, VALUES_FILE, caesar, find_shift, load_ciphertext, rot13
 
 FLAG = "picoCTF{next_time_I'll_try_2_rounds_of_rot13_45559abd}"
 
@@ -38,6 +40,61 @@ def test_non_letters_pass_through():
     """Braces, digits, the apostrophe and underscores are outside the
     mod-26 alphabet, so they must survive the shift unchanged."""
     assert rot13("{_'2_45559}") == "{_'2_45559}"
+
+
+# --------------------------------------------------------------------------
+# values.txt is the single source of the ciphertext
+# --------------------------------------------------------------------------
+
+
+def test_ciphertext_comes_from_values_file():
+    """CIPHERTEXT is read from disk, not duplicated as a literal here."""
+    assert VALUES_FILE.exists(), f"{VALUES_FILE} is the input; it must be committed"
+    assert load_ciphertext() == CIPHERTEXT
+
+
+def test_values_file_drift_is_caught_by_the_flag_assertion():
+    """The mechanism that makes a single source *stay* single: edit
+    values.txt and test_rot13_recovers_the_flag fails. Proven here by
+    feeding the loader a corrupted copy and checking it no longer
+    decodes to the flag."""
+    with tempfile.TemporaryDirectory() as tmp:
+        corrupted = Path(tmp) / "values.txt"
+        corrupted.write_text(CIPHERTEXT.replace("cvpb", "xxxx") + "\n")
+        assert rot13(load_ciphertext(corrupted)) != FLAG
+
+
+def test_loader_ignores_blank_lines_and_trailing_newline():
+    """The real values.txt ends with a newline; that must not become a
+    second entry or leave trailing whitespace on the ciphertext."""
+    with tempfile.TemporaryDirectory() as tmp:
+        padded = Path(tmp) / "values.txt"
+        padded.write_text(f"\n  {CIPHERTEXT}  \n\n")
+        assert load_ciphertext(padded) == CIPHERTEXT
+
+
+def test_loader_rejects_a_file_with_two_entries():
+    """Two lines means a different challenge input than this script was
+    written for -- say so rather than silently taking the first."""
+    with tempfile.TemporaryDirectory() as tmp:
+        two = Path(tmp) / "values.txt"
+        two.write_text(f"{CIPHERTEXT}\nsome_other_ciphertext\n")
+        try:
+            load_ciphertext(two)
+            assert False, "expected ValueError for a two-entry file"
+        except ValueError:
+            pass
+
+
+def test_loader_rejects_an_empty_file():
+    with tempfile.TemporaryDirectory() as tmp:
+        empty = Path(tmp) / "values.txt"
+        empty.write_text("\n\n")
+        try:
+            load_ciphertext(empty)
+            assert False, "expected ValueError for an empty file"
+        except ValueError:
+            pass
 
 
 # --------------------------------------------------------------------------

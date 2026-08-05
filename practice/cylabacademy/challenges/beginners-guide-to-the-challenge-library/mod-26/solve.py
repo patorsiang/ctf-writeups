@@ -8,12 +8,13 @@ Implemented as a general Caesar so the shift is an argument rather than a
 magic constant: a shift-13 special case can't be sanity-checked against
 the shift that actually recovers the known `picoCTF{` prefix.
 
-    python3 solve.py            # decode the pinned ciphertext
+    python3 solve.py            # decode the ciphertext in values.txt
     python3 solve.py <text>     # decode anything else
 """
 
 import string
 import sys
+from pathlib import Path
 
 LOWER = string.ascii_lowercase
 UPPER = string.ascii_uppercase
@@ -47,7 +48,29 @@ def find_shift(ciphertext: str, crib: str = "picoCTF{") -> int:
     raise ValueError(f"no shift in 0..25 maps this ciphertext to {crib!r}")
 
 
-CIPHERTEXT = "cvpbPGS{arkg_gvzr_V'yy_gel_2_ebhaqf_bs_ebg13_45559noq}"
+VALUES_FILE = Path(__file__).parent / "values.txt"
+
+
+def load_ciphertext(path: Path = VALUES_FILE) -> str:
+    """Read the challenge input from values.txt.
+
+    values.txt is the single source of truth for the ciphertext. Holding a
+    copy here as a literal too would mean two things that must agree with
+    nothing enforcing it -- the point of a single source isn't saving
+    space, it's that there is no second copy to drift.
+
+    Validates rather than silently coercing: a file with two entries is a
+    different challenge input than the one this script was written for,
+    and should say so instead of quietly using the first line.
+    """
+    lines = [line.strip() for line in path.read_text().splitlines()]
+    entries = [line for line in lines if line]
+    if len(entries) != 1:
+        raise ValueError(f"{path.name}: expected 1 non-empty line, found {len(entries)}")
+    return entries[0]
+
+
+CIPHERTEXT = load_ciphertext()
 
 
 if __name__ == "__main__":

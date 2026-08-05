@@ -9,7 +9,7 @@
 - Status: Solved
 - Started: 2026-08-04
 - Completed: 2026-08-04
-- Files: `solve.py`, `test_recon.py`
+- Files: `values.txt` (the challenge input), `solve.py`, `test_recon.py`
 - Skills Learned: ROT13 / Caesar shift, CyberChef, recovering a shift from a crib instead of guessing
 
 ## Problem Summary
@@ -92,9 +92,26 @@ python3 solve.py
 # FLAG: picoCTF{next_time_I'll_try_2_rounds_of_rot13_45559abd}
 ```
 
+The ciphertext is **not** a literal in `solve.py`. It is read from
+[`values.txt`](values.txt), which is the single source of truth for the
+challenge input — a second copy would be a second thing to keep in sync,
+with nothing enforcing that it stays in sync.
+
 [`test_recon.py`](test_recon.py) covers the flag, the crib-derived shift,
 non-letter pass-through, a ciphertext no shift can fix (so the finder is
-proven to say "no", not just "yes"), and the involution property below:
+proven to say "no", not just "yes"), the involution property below, and
+the loader: blank-line/whitespace tolerance, and rejection of an empty or
+two-entry file rather than silently taking the first line.
+
+The single-source claim is only worth making if something enforces it, so
+it was checked by mutation rather than assumed — corrupt `values.txt` and
+`test_rot13_recovers_the_flag` fails:
+
+```console
+$ printf 'cvpbPGS{...XXXXXnoq}\n' > values.txt && python3 test_recon.py
+    assert rot13(CIPHERTEXT) == FLAG
+AssertionError
+```
 
 ```bash
 python3 test_recon.py    # or: pytest test_recon.py
