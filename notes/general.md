@@ -163,6 +163,45 @@ Check these before opening a tool:
 If a standard decode yields garbage, suspect the **variant** before
 suspecting the data.
 
+## Never Type A Long Path
+
+Two mechanisms, different moments, both worth fluency:
+
+| Mechanism | Runs | Behaviour |
+| --- | --- | --- |
+| **Tab completion** | interactively, as you type | one Tab completes a unique match; two Tabs lists candidates when ambiguous |
+| **Globbing** (`*`, `**`) | at execution, before the command | shell expands the pattern into real paths |
+
+Tab is for exploring — you read each name as it appears. Globs are for
+scripting and for skipping levels wholesale:
+
+```bash
+cd Addadshashanammu/*/*/*/*/*/*/   # six levels, one command
+cd */                              # works whenever exactly one dir matches
+```
+
+Completion is **context-aware**, not just prefix matching: with a `foo`
+directory and a `foo.zip` beside it, `cd foo`+Tab still completes to the
+directory, because `cd` only accepts directories.
+
+Seen in [Tab, Tab, Attack](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/tab-tab-attack/README.md).
+
+**Absolute paths remove a class of error.** When `cd` reports "no such
+file or directory" and the path looks right, check `pwd` before doubting
+the file — a relative path is a claim about where you are standing.
+
+## Inspect An Archive Before Extracting It
+
+```bash
+unzip -Z1 file.zip | grep -E '^/|\.\.'    # no output = safe
+tar -tf file.tar.gz | grep -E '^/|\.\.'   # tarball equivalent
+```
+
+Listing writes nothing. An entry like `../../.ssh/authorized_keys` gets
+written **outside** the directory you extracted from — this is
+**zip-slip**, a real CVE class that has hit widely-used archive libraries
+in many languages. One command, every untrusted archive, always.
+
 ## Running A Provided Binary
 
 `file` first, always. One command answers the four things that decide how
@@ -289,6 +328,7 @@ That last row is worth memorising: ASCII case differs by exactly one bit
 - [CyLab 2warm](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/2warm/README.md) — decimal to binary, powers of two, bit regrouping
 - [CyLab Bases](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/bases/README.md) — base64 as 6-bit regrouping, encoding vs number base
 - [CyLab Wave a Flag](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/wave-a-flag/README.md) — help flags, exec format error, Docker `--platform`
+- [CyLab Tab, Tab, Attack](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/tab-tab-attack/README.md) — tab completion, globbing, zip-slip check
 - [CyLab obedient-cat](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/obedient-cat/README.md) — reading a provided file
 - [CyLab super-ssh](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/super-ssh/README.md) — `ssh -p` on a non-default port
 - [CyLab whats-a-net-cat](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/whats-a-net-cat/README.md) — raw TCP with `nc`

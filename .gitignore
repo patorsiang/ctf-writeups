@@ -40,3 +40,6 @@ passwords.txt
 
 # Snyk
 .github/instructions/snyk_rules.instructions.md
+
+# Extracted challenge archives — the .zip is committed; the tree regenerates
+practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/tab-tab-attack/Addadshashanammu/
