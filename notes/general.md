@@ -10,7 +10,7 @@ other category sits on.
 - `file <target>` before `cat <target>`. The extension is a claim, not
   evidence; `file` reads magic bytes.
 - `strings <binary> | grep -i flag` is the cheapest first pass on anything
-  non-text.
+  non-text. See [Reading A Binary Without Running It](#reading-a-binary-without-running-it).
 - When a service is involved, write down host **and** port. Non-default
   ports (`ssh -p`, `nc host port`) are the whole point of several
   beginner challenges.
@@ -202,6 +202,43 @@ written **outside** the directory you extracted from — this is
 **zip-slip**, a real CVE class that has hit widely-used archive libraries
 in many languages. One command, every untrusted archive, always.
 
+## Reading A Binary Without Running It
+
+**Static analysis first.** Reading a file needs no matching OS or CPU and
+cannot be harmed by what the file does; executing it needs both and is
+the risky step. `strings` on an x86-64 Linux ELF works fine from an arm64
+Mac — no Docker, no emulation — because nothing is being run.
+
+`strings` is three rules, not magic:
+
+1. walk the bytes looking for runs of printable characters
+2. a run ends at the first non-printable byte — usually the `NUL`
+   terminating a C string
+3. emit runs of at least `min_len` (default 4), discard shorter ones
+
+| Flag | Effect |
+| --- | --- |
+| `-t x` | prefix each hit with its hex offset — turns "somewhere in here" into a place to look |
+| `-n 8` | raise minimum length to cut noise |
+| `-e l` | scan **UTF-16LE** |
+| `-a` | scan the whole file, not just loadable sections |
+
+**The trap: an empty result is not evidence of no strings.** Windows
+binaries store text as UTF-16LE — every character followed by a NUL — so
+an ASCII scan matches nothing and reports nothing, with no error. Reach
+for `-e l` before concluding a binary is clean.
+
+**Compilation is not obfuscation.** Hardcoded credentials, API keys,
+internal hostnames and debug messages survive into the binary verbatim; a
+string in the source is a string in the artifact. `strings` is the first
+command anyone points at a mobile app, desktop binary or firmware image,
+and it is routinely enough. `not stripped` in `file` output means static
+analysis will be productive.
+
+Escalate to `objdump -d` or Ghidra only when the interesting data is
+*computed* at runtime rather than stored. Seen in
+[strings it](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/strings-it/README.md).
+
 ## Running A Provided Binary
 
 `file` first, always. One command answers the four things that decide how
@@ -329,6 +366,7 @@ That last row is worth memorising: ASCII case differs by exactly one bit
 - [CyLab Bases](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/bases/README.md) — base64 as 6-bit regrouping, encoding vs number base
 - [CyLab Wave a Flag](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/wave-a-flag/README.md) — help flags, exec format error, Docker `--platform`
 - [CyLab Tab, Tab, Attack](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/tab-tab-attack/README.md) — tab completion, globbing, zip-slip check
+- [CyLab strings it](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/strings-it/README.md) — static analysis, printable-run scanning, UTF-16 trap
 - [CyLab obedient-cat](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/obedient-cat/README.md) — reading a provided file
 - [CyLab super-ssh](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/super-ssh/README.md) — `ssh -p` on a non-default port
 - [CyLab whats-a-net-cat](../practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/whats-a-net-cat/README.md) — raw TCP with `nc`
