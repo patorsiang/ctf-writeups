@@ -27,6 +27,7 @@ __pycache__/
 !events/2024/tcp1p/pwn/k/K.tar.gz
 !events/2025/la-ctf/web/mavs-fan/mavs-fan.zip
 !events/2025/stdioctf/unsorted-artifacts/Archive.zip
+!practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/tab-tab-attack/Addadshashanammu.zip
 
 # pwntools / gdb
 core
