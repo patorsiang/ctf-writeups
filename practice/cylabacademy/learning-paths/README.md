@@ -22,6 +22,7 @@ This index organizes CyLab Academy work by platform learning path first, then by
 | The Beginner's Guide to the Challenge Library | bases | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/bases/README.md) |
 | The Beginner's Guide to the Challenge Library | wave-a-flag | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/wave-a-flag/README.md) |
 | The Beginner's Guide to the Challenge Library | tab-tab-attack | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/tab-tab-attack/README.md) |
+| The Beginner's Guide to the Challenge Library | insp3ct0r | Web | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/insp3ct0r/README.md) |
 
 ## Cross-Links To Legacy picoGym
 

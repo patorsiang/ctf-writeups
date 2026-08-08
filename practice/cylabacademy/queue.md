@@ -26,6 +26,7 @@ Use this file as the lightweight inbox for new learning challenges.
 | 2026-08-04 | The Beginner's Guide to the Challenge Library | bases | [writeup](challenges/beginners-guide-to-the-challenge-library/bases/README.md) | Base64 is a transport encoding, not a number base; 6 bits = 1 char. |
 | 2026-08-05 | The Beginner's Guide to the Challenge Library | wave-a-flag | [writeup](challenges/beginners-guide-to-the-challenge-library/wave-a-flag/README.md) | `exec format error` = wrong OS/CPU; `docker --platform` runs it anyway. |
 | 2026-08-05 | The Beginner's Guide to the Challenge Library | tab-tab-attack | [writeup](challenges/beginners-guide-to-the-challenge-library/tab-tab-attack/README.md) | Tab completes interactively, globs expand at exec; check zips before extracting. |
+| 2026-08-09 | The Beginner's Guide to the Challenge Library | insp3ct0r | [writeup](challenges/beginners-guide-to-the-challenge-library/insp3ct0r/README.md) | Client-side source is public; enumerate assets, not just the page. |
 
 ## Parking Lot
 
