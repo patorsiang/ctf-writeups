@@ -28,6 +28,8 @@ Use this file as the lightweight inbox for new learning challenges.
 | 2026-08-05 | The Beginner's Guide to the Challenge Library | tab-tab-attack | [writeup](challenges/beginners-guide-to-the-challenge-library/tab-tab-attack/README.md) | Tab completes interactively, globs expand at exec; check zips before extracting. |
 | 2026-08-09 | The Beginner's Guide to the Challenge Library | insp3ct0r | [writeup](challenges/beginners-guide-to-the-challenge-library/insp3ct0r/README.md) | Client-side source is public; enumerate assets, not just the page. |
 | 2026-08-09 | The Beginner's Guide to the Challenge Library | strings-it | [writeup](challenges/beginners-guide-to-the-challenge-library/strings-it/README.md) | Static analysis needs no matching OS/CPU; empty `strings` output may mean UTF-16. |
+| 2026-08-12 | The Beginner's Guide to the Challenge Library | first-grep | [writeup](challenges/beginners-guide-to-the-challenge-library/first-grep/README.md) | `grep -o 'picoCTF{[^}]*}' file` extracts only the flag from noisy text. |
+| 2026-08-12 | The Beginner's Guide to the Challenge Library | where-are-the-robots | [writeup](challenges/beginners-guide-to-the-challenge-library/where-are-the-robots/README.md) | `robots.txt` is public crawler guidance, not access control. |
 
 ## Parking Lot
 
