@@ -31,6 +31,8 @@ Use this file as the lightweight inbox for new learning challenges.
 | 2026-08-12 | The Beginner's Guide to the Challenge Library | first-grep | [writeup](challenges/beginners-guide-to-the-challenge-library/first-grep/README.md) | `grep -o 'picoCTF{[^}]*}' file` extracts only the flag from noisy text. |
 | 2026-08-12 | The Beginner's Guide to the Challenge Library | where-are-the-robots | [writeup](challenges/beginners-guide-to-the-challenge-library/where-are-the-robots/README.md) | `robots.txt` is public crawler guidance, not access control. |
 | 2026-08-13 | The Beginner's Guide to the Challenge Library | python-wrangling | [writeup](challenges/beginners-guide-to-the-challenge-library/python-wrangling/README.md) | Use a local virtualenv for challenge dependencies, then pass the password file to the decrypt script. |
+| 2026-08-14 | The Beginner's Guide to the Challenge Library | pw-crack-1 | [writeup](challenges/beginners-guide-to-the-challenge-library/pw-crack-1/README.md) | Read the password check first; a hard-coded comparison reveals the expected input. |
+| 2026-08-14 | The Beginner's Guide to the Challenge Library | pw-crack-2 | [writeup](challenges/beginners-guide-to-the-challenge-library/pw-crack-2/README.md) | Decode `chr(0x...)` expressions to recover characters from code points. |
 
 ## Parking Lot
 
