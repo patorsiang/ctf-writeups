@@ -33,6 +33,9 @@ Use this file as the lightweight inbox for new learning challenges.
 | 2026-08-13 | The Beginner's Guide to the Challenge Library | python-wrangling | [writeup](challenges/beginners-guide-to-the-challenge-library/python-wrangling/README.md) | Use a local virtualenv for challenge dependencies, then pass the password file to the decrypt script. |
 | 2026-08-14 | The Beginner's Guide to the Challenge Library | pw-crack-1 | [writeup](challenges/beginners-guide-to-the-challenge-library/pw-crack-1/README.md) | Read the password check first; a hard-coded comparison reveals the expected input. |
 | 2026-08-14 | The Beginner's Guide to the Challenge Library | pw-crack-2 | [writeup](challenges/beginners-guide-to-the-challenge-library/pw-crack-2/README.md) | Decode `chr(0x...)` expressions to recover characters from code points. |
+| 2026-08-15 | The Beginner's Guide to the Challenge Library | pw-crack-3 | [writeup](challenges/beginners-guide-to-the-challenge-library/pw-crack-3/README.md) | Hash each candidate the same way the checker does, then compare digest bytes. |
+| 2026-08-15 | The Beginner's Guide to the Challenge Library | pw-crack-4 | [writeup](challenges/beginners-guide-to-the-challenge-library/pw-crack-4/README.md) | Automate longer candidate lists by parsing the source list and hashing each candidate. |
+| 2026-08-15 | The Beginner's Guide to the Challenge Library | pw-crack-5 | [writeup](challenges/beginners-guide-to-the-challenge-library/pw-crack-5/README.md) | Use a dictionary attack: hash each file candidate and compare it to the stored digest. |
 
 ## Parking Lot
 
