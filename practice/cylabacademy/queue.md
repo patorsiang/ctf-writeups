@@ -36,6 +36,9 @@ Use this file as the lightweight inbox for new learning challenges.
 | 2026-08-15 | The Beginner's Guide to the Challenge Library | pw-crack-3 | [writeup](challenges/beginners-guide-to-the-challenge-library/pw-crack-3/README.md) | Hash each candidate the same way the checker does, then compare digest bytes. |
 | 2026-08-15 | The Beginner's Guide to the Challenge Library | pw-crack-4 | [writeup](challenges/beginners-guide-to-the-challenge-library/pw-crack-4/README.md) | Automate longer candidate lists by parsing the source list and hashing each candidate. |
 | 2026-08-15 | The Beginner's Guide to the Challenge Library | pw-crack-5 | [writeup](challenges/beginners-guide-to-the-challenge-library/pw-crack-5/README.md) | Use a dictionary attack: hash each file candidate and compare it to the stored digest. |
+| 2026-08-16 | The Beginner's Guide to the Challenge Library | enhance | [writeup](challenges/beginners-guide-to-the-challenge-library/enhance/README.md) | SVG is XML source; tiny hidden text can be easier to read in markup than in the rendered image. |
+| 2026-08-16 | The Beginner's Guide to the Challenge Library | big-zip | [writeup](challenges/beginners-guide-to-the-challenge-library/big-zip/README.md) | Use recursive search for large extracted file trees instead of opening files one by one. |
+| 2026-08-16 | The Beginner's Guide to the Challenge Library | vault-door-training | [writeup](challenges/beginners-guide-to-the-challenge-library/vault-door-training/README.md) | Read the validation function first; a hard-coded `equals` string reveals the inner password. |
 
 ## Parking Lot
 

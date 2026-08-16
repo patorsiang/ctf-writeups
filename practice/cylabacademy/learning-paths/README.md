@@ -24,9 +24,12 @@ This index organizes CyLab Academy work by platform learning path first, then by
 | The Beginner's Guide to the Challenge Library | tab-tab-attack | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/tab-tab-attack/README.md) |
 | The Beginner's Guide to the Challenge Library | insp3ct0r | Web | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/insp3ct0r/README.md) |
 | The Beginner's Guide to the Challenge Library | strings-it | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/strings-it/README.md) |
+| The Beginner's Guide to the Challenge Library | enhance | Forensics | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/enhance/README.md) |
 | The Beginner's Guide to the Challenge Library | first-grep | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/first-grep/README.md) |
+| The Beginner's Guide to the Challenge Library | big-zip | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/big-zip/README.md) |
 | The Beginner's Guide to the Challenge Library | where-are-the-robots | Web | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/where-are-the-robots/README.md) |
 | The Beginner's Guide to the Challenge Library | python-wrangling | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/python-wrangling/README.md) |
+| The Beginner's Guide to the Challenge Library | vault-door-training | Reverse Engineering | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/vault-door-training/README.md) |
 | The Beginner's Guide to the Challenge Library | pw-crack-1 | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/pw-crack-1/README.md) |
 | The Beginner's Guide to the Challenge Library | pw-crack-2 | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/pw-crack-2/README.md) |
 | The Beginner's Guide to the Challenge Library | pw-crack-3 | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/pw-crack-3/README.md) |
