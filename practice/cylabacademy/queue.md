@@ -39,6 +39,8 @@ Use this file as the lightweight inbox for new learning challenges.
 | 2026-08-16 | The Beginner's Guide to the Challenge Library | enhance | [writeup](challenges/beginners-guide-to-the-challenge-library/enhance/README.md) | SVG is XML source; tiny hidden text can be easier to read in markup than in the rendered image. |
 | 2026-08-16 | The Beginner's Guide to the Challenge Library | big-zip | [writeup](challenges/beginners-guide-to-the-challenge-library/big-zip/README.md) | Use recursive search for large extracted file trees instead of opening files one by one. |
 | 2026-08-16 | The Beginner's Guide to the Challenge Library | vault-door-training | [writeup](challenges/beginners-guide-to-the-challenge-library/vault-door-training/README.md) | Read the validation function first; a hard-coded `equals` string reveals the inner password. |
+| 2026-08-17 | The Beginner's Guide to the Challenge Library | keygenme-py | [writeup](challenges/beginners-guide-to-the-challenge-library/keygenme-py/README.md) | Read the license checker first; hash the known username and select the indexed digest characters. |
+| 2026-08-17 | The Beginner's Guide to the Challenge Library | buffer-overflow-0 | [writeup](challenges/beginners-guide-to-the-challenge-library/buffer-overflow-0/README.md) | Overflowing the small `strcpy` destination triggers the custom SIGSEGV handler that prints the flag. |
 
 ## Parking Lot
 

@@ -30,6 +30,8 @@ This index organizes CyLab Academy work by platform learning path first, then by
 | The Beginner's Guide to the Challenge Library | where-are-the-robots | Web | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/where-are-the-robots/README.md) |
 | The Beginner's Guide to the Challenge Library | python-wrangling | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/python-wrangling/README.md) |
 | The Beginner's Guide to the Challenge Library | vault-door-training | Reverse Engineering | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/vault-door-training/README.md) |
+| The Beginner's Guide to the Challenge Library | keygenme-py | Reverse Engineering | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/keygenme-py/README.md) |
+| The Beginner's Guide to the Challenge Library | buffer-overflow-0 | Binary Exploitation | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/buffer-overflow-0/README.md) |
 | The Beginner's Guide to the Challenge Library | pw-crack-1 | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/pw-crack-1/README.md) |
 | The Beginner's Guide to the Challenge Library | pw-crack-2 | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/pw-crack-2/README.md) |
 | The Beginner's Guide to the Challenge Library | pw-crack-3 | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/pw-crack-3/README.md) |
