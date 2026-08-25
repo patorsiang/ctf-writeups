@@ -42,9 +42,10 @@ Use this file as the lightweight inbox for new learning challenges.
 | 2026-08-17 | The Beginner's Guide to the Challenge Library | keygenme-py | [writeup](challenges/beginners-guide-to-the-challenge-library/keygenme-py/README.md) | Read the license checker first; hash the known username and select the indexed digest characters. |
 | 2026-08-17 | The Beginner's Guide to the Challenge Library | buffer-overflow-0 | [writeup](challenges/beginners-guide-to-the-challenge-library/buffer-overflow-0/README.md) | Overflowing the small `strcpy` destination triggers the custom SIGSEGV handler that prints the flag. |
 | 2026-08-22 | AI Foundations I - The Lost Book of Perceptrons | neuron-meet-0 | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/neuron-meet-0/README.md) | Use binary search to find a perceptron decision boundary, then choose distinct same-side inputs for repeated output bits. |
+| 2026-08-25 | AI Foundations I - The Lost Book of Perceptrons | neuron-meet-2d-0 | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/neuron-meet-2d-0/README.md) | Probe 2D corner points to find safe firing and quiet regions, then use distinct pairs to spell `01110000`. |
 
 ## Parking Lot
 
 Use this section for challenges that look interesting but are not worth starting yet.
 
-- 
+-
