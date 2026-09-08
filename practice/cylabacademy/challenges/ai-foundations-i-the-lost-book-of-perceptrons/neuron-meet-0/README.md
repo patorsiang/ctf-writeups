@@ -90,6 +90,33 @@ The "no back-to-back repeats" rule means repeated output bits must use different
 numbers on the same side. For example, `10.0`, `9.9`, and `9.8` are different
 inputs but all still safely produce `1`.
 
+## How To Solve This Kind Next Time
+
+When a challenge gives a hidden rule and lets you query it, treat it like a
+black-box testing problem:
+
+1. Identify what you control. Here, the input is one number, `x`.
+2. Identify what you can observe. Here, the output is only `0` or `1`.
+3. Look for words that imply a boundary, such as `>=`, threshold, fires, quiet,
+   less than, greater than, allowed range, or decision boundary.
+4. Probe the extremes first. Try the minimum and maximum allowed values to see
+   whether they produce different outputs.
+5. If the extremes differ, binary-search between them until the boundary is
+   clear enough.
+6. Reset the history if earlier probes would pollute the final answer.
+7. Build the target output pattern using safe values from each side of the
+   boundary.
+
+For this challenge, the mental model becomes:
+
+```text
+-10 ---------------- boundary ---------------- 10
+  0                                             1
+```
+
+The exact weights `w` and `b` do not matter. Once the two sides are predictable,
+you can choose values from the correct side to produce the requested bit pattern.
+
 ## Solution Walkthrough
 
 1. Connect to the service.
