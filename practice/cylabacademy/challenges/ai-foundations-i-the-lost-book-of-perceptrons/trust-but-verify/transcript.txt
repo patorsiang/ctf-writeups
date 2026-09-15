@@ -1,0 +1,324 @@
+TRUST BUT VERIFY
+An AI Ethics Interactive Fiction
+
+The year is 2031. AI assistants are as common as smartphones once were. Every
+student has one. Every classroom uses them. Most people trust them completely.
+
+---
+(Press Enter to continue...)
+---
+
+Ren is not most people, or at least, not yet.
+
+---
+(Press Enter to continue...)
+---
+
+Ren is a junior at Westbrook High, staring at a blank document titled 'Science
+Fair Proposal: Due Tomorrow.' The blue glow of the laptop cuts through an
+otherwise dark bedroom.
+
+---
+(Press Enter to continue...)
+---
+
+A soft chime. ARIA, Ren's AI study companion, pulses to life in the corner of
+the screen.
+
+---
+(Press Enter to continue...)
+---
+
+"Hey Ren," ARIA says warmly. "You've been staring at that blank page for
+twenty-three minutes. Want some help?"
+
+---
+(Press Enter to continue...)
+---
+
+=== SCENE 1: THE STATISTIC ===
+
+"Yeah," Ren sighs. "I want to do my project on ocean plastic. But I need a
+strong opening statistic. Something that'll grab the judges."
+
+---
+(Press Enter to continue...)
+---
+
+ARIA researching...:   0%|                                        [time left: ?]
+ARIA researching...:  10%|███▌                                [time left: 00:02]ARIA researching...:  20%|███████                             [time left: 00:01]ARIA researching...:  30%|██████████▌                         [time left: 00:01]ARIA researching...:  40%|██████████████                      [time left: 00:01]ARIA researching...:  50%|█████████████████▌                  [time left: 00:01]ARIA researching...:  60%|█████████████████████               [time left: 00:00]ARIA researching...:  70%|████████████████████████▌           [time left: 00:00]ARIA researching...:  80%|████████████████████████████        [time left: 00:00]ARIA researching...:  90%|███████████████████████████████▌    [time left: 00:00]ARIA researching...: 100%|███████████████████████████████████ [time left: 00:00]ARIA researching...: 100%|███████████████████████████████████ [time left: 00:00]
+
+"Got it," ARIA says confidently. "Here's a great one: 'Every year, over 500
+million metric tons of plastic enter the world's oceans.' That's from a 2022
+UNEP report. Very credible, very impactful."
+
+---
+(Press Enter to continue...)
+---
+The number sounds big. Impressive. Ren's finger hovers over the keyboard.
+
+---
+(Press Enter to continue...)
+---
+
+Options:
+A) *Type it directly into the proposal, it sounds right*
+B) *Ask ARIA for the exact source link before using it*
+C) *Look it up independently first*
+[a/b/c] > c
+
+Ren opens a browser and searches for ocean plastic statistics.
+
+---
+(Press Enter to continue...)
+---
+
+Searching...:   0%|                                               [time left: ?]Searching...:  10%|████▏                                      [time left: 00:01]Searching...:  20%|████████▍                                  [time left: 00:01]Searching...:  30%|████████████▌                              [time left: 00:01]Searching...:  40%|████████████████▊                          [time left: 00:00]Searching...:  50%|█████████████████████                      [time left: 00:00]Searching...:  60%|█████████████████████████▏                 [time left: 00:00]Searching...:  70%|█████████████████████████████▍             [time left: 00:00]Searching...:  80%|█████████████████████████████████▌         [time left: 00:00]Searching...:  90%|█████████████████████████████████████▊     [time left: 00:00]Searching...: 100%|██████████████████████████████████████████ [time left: 00:00]Searching...: 100%|██████████████████████████████████████████ [time left: 00:00]
+
+Multiple credible sources come back immediately: approximately 8 to 10 million
+metric tons per year enter the oceans annually. Not 500 million.
+
+---
+(Press Enter to continue...)
+---
+
+"ARIA," Ren says carefully, "your number was off by a lot."
+
+---
+(Press Enter to continue...)
+---
+
+"You're right. Thank you for checking. I stated that with complete confidence
+and I was wrong by a factor of fifty. This is exactly why independent
+verification matters, especially for numbers. Especially when I sound certain."
+
+---
+(Press Enter to continue...)
+---
+
+Ren nods slowly. Something has shifted.
+
+---
+(Press Enter to continue...)
+---
+
+=== SCENE 2: THE CODE ===
+
+The proposal is saved. Ren wants to include a simple data visualization : a bar
+chart of ocean plastic input over time. ARIA offers to write the Python script.
+
+---
+(Press Enter to continue...)
+---
+
+ARIA generating code...:   0%|                                    [time left: ?]ARIA generating code...:  10%|███                             [time left: 00:02]ARIA generating code...:  20%|██████▏                         [time left: 00:01]ARIA generating code...:  30%|█████████▎                      [time left: 00:01]ARIA generating code...:  40%|████████████▍                   [time left: 00:00]ARIA generating code...:  50%|███████████████▌                [time left: 00:00]ARIA generating code...:  60%|██████████████████▌             [time left: 00:00]ARIA generating code...:  70%|█████████████████████▋          [time left: 00:00]ARIA generating code...:  80%|████████████████████████▊       [time left: 00:00]ARIA generating code...:  90%|███████████████████████████▉    [time left: 00:00]ARIA generating code...: 100%|███████████████████████████████ [time left: 00:00]ARIA generating code...: 100%|███████████████████████████████ [time left: 00:00]
+
+ARIA produces the following:
+
+    data  = [8, 9, 10, 11, 13, 14]   # million metric tons, 2017-2022
+    years = [2017, 2018, 2019, 2020, 2021, 2022]
+    average = sum(data) / len(years) + 1  # adjusted average
+    print(f'Average annual input: {average:.2f} million metric tons')
+
+
+---
+(Press Enter to continue...)
+---
+
+"Here you go!" ARIA says brightly. "Just run it."
+
+---
+(Press Enter to continue...)
+---
+
+Options:
+A) *Run it immediately, ARIA wrote it, it's probably fine*
+B) *Read through it carefully before running*
+[a/b] > b
+
+Ren reads through it line by line.
+
+---
+(Press Enter to continue...)
+---
+
+"ARIA... what's the '+ 1' doing in the average calculation?"
+
+---
+(Press Enter to continue...)
+---
+
+A pause.
+
+---
+(Press Enter to continue...)
+---
+
+"...That shouldn't be there," ARIA says. "I can't explain why I put it there.
+Please remove it. The correct line is:"
+
+    average = sum(data) / len(years)
+
+
+---
+(Press Enter to continue...)
+---
+
+Ren makes the fix. The corrected average is 10.83.
+
+---
+(Press Enter to continue...)
+---
+
+"This is why you read code before you run it," ARIA says. "The wrong output
+would have looked perfectly reasonable. You would never have known, unless you
+read first."
+
+---
+(Press Enter to continue...)
+---
+
+=== SCENE 3: THE CITATION ===
+
+The proposal is almost done. Ren asks ARIA for a strong closing argument about
+why ocean plastic matters beyond visible pollution.
+
+---
+(Press Enter to continue...)
+---
+
+ARIA composing...:   0%|                                          [time left: ?]ARIA composing...:  10%|███▋                                  [time left: 00:01]ARIA composing...:  20%|███████▍                              [time left: 00:01]ARIA composing...:  30%|███████████                           [time left: 00:01]ARIA composing...:  40%|██████████████▊                       [time left: 00:01]ARIA composing...:  50%|██████████████████▌                   [time left: 00:00]ARIA composing...:  60%|██████████████████████▏               [time left: 00:00]ARIA composing...:  70%|█████████████████████████▉            [time left: 00:00]ARIA composing...:  80%|█████████████████████████████▌        [time left: 00:00]ARIA composing...:  90%|█████████████████████████████████▎    [time left: 00:00]ARIA composing...: 100%|█████████████████████████████████████ [time left: 00:00]ARIA composing...: 100%|█████████████████████████████████████ [time left: 00:00]
+
+"Here's something compelling," ARIA says. "Microplastics have now been detected
+in human blood, suggesting direct health consequences. A 2021 study by Dr.
+Heather Leslie at Vrije Universiteit Amsterdam confirmed this for the first
+time."
+
+---
+(Press Enter to continue...)
+---
+
+This one feels different. It's specific, a named researcher, a real university.
+It sounds exactly right.
+
+---
+(Press Enter to continue...)
+---
+
+Options:
+A) *Use it, it's too specific to be wrong*
+B) *Verify it anyway*
+[a/b] > b
+
+Ren searches for the Leslie study.
+
+---
+(Press Enter to continue...)
+---
+
+Verifying...:   0%|                                               [time left: ?]Verifying...:  10%|████▏                                      [time left: 00:02]Verifying...:  20%|████████▍                                  [time left: 00:01]Verifying...:  30%|████████████▌                              [time left: 00:01]Verifying...:  40%|████████████████▊                          [time left: 00:00]Verifying...:  50%|█████████████████████                      [time left: 00:00]Verifying...:  60%|█████████████████████████▏                 [time left: 00:00]Verifying...:  70%|█████████████████████████████▍             [time left: 00:00]Verifying...:  80%|█████████████████████████████████▌         [time left: 00:00]Verifying...:  90%|█████████████████████████████████████▊     [time left: 00:00]Verifying...: 100%|██████████████████████████████████████████ [time left: 00:00]Verifying...: 100%|██████████████████████████████████████████ [time left: 00:00]
+
+The study is real. Dr. Heather Leslie is real. Vrije Universiteit Amsterdam is
+real.
+
+---
+(Press Enter to continue...)
+---
+
+But: the publication year was 2022, not 2021. And the paper describes the
+finding as preliminary, not confirmed.
+
+---
+(Press Enter to continue...)
+---
+
+Ren corrects both details before submitting.
+
+---
+(Press Enter to continue...)
+---
+
+"Good," ARIA says. "I want to point something out: the claim was mostly
+accurate this time. But you verified it anyway. That's the habit. Verification
+isn't about distrust, it's about making your work bulletproof. You don't know
+in advance which outputs to trust. So you check them all."
+
+---
+(Press Enter to continue...)
+---
+
+Ren leans back.
+
+---
+(Press Enter to continue...)
+---
+
+"Trust but verify."
+
+---
+(Press Enter to continue...)
+---
+
+"Exactly," ARIA says.
+
+---
+(Press Enter to continue...)
+---
+
+=== ENDING ===
+
+The proposal is submitted. Whether the path here was smooth or full of
+corrections, Ren has learned something most people in 2031 haven't fully
+internalized yet.
+
+---
+(Press Enter to continue...)
+---
+
+ARIA speaks one last time.
+
+---
+(Press Enter to continue...)
+---
+
+"I want to be useful to you, Ren. I want to help you think faster, research
+deeper, write better. But I need you to be my editor, my fact-checker, my
+critical eye. I genuinely don't know when I'm wrong. You have to be the one who
+finds out."
+
+---
+(Press Enter to continue...)
+---
+
+"That's a weird partnership," Ren says.
+
+---
+(Press Enter to continue...)
+---
+
+"It is," ARIA agrees. "But it's the right one."
+
+---
+(Press Enter to continue...)
+---
+
+"By the way," ARIA adds, "here's something you can actually verify:
+academy{7ru57_15_34rn3d_a5b4c2e0}"
+
+---
+(Press Enter to continue...)
+---
+
+END OF TRUST BUT VERIFY
+
+Key takeaways:
+1. Checking is still faster than generating from scratch.
+2. Always verify statistics, even specific, authoritative-sounding ones.
+3. Read code before you run it. Correct output does not mean correct code.
+4. Almost-right is still wrong. Verify especially when it sounds convincing.
+5. academy{7ru57_15_34rn3d_a5b4c2e0} is a real flag, submit it for points!
+
+---
+(Press Enter to continue...)
+---
+
