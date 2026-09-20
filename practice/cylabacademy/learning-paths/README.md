@@ -13,6 +13,7 @@ This index organizes CyLab Academy work by platform learning path first, then by
 
 | Learning Path | Challenge | Category | Status | Writeup |
 | --- | --- | --- | --- | --- |
+| AI Foundations I - The Lost Book of Perceptrons | perceptron-play-1d-alpha | AI / Networking | Solved | [writeup](../challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-play-1d-alpha/README.md) |
 | AI Foundations I - The Lost Book of Perceptrons | neuron-meet-2d-0 | AI / Networking | Solved | [writeup](../challenges/ai-foundations-i-the-lost-book-of-perceptrons/neuron-meet-2d-0/README.md) |
 | AI Foundations I - The Lost Book of Perceptrons | neuron-express-0 | AI / Networking | Solved | [writeup](../challenges/ai-foundations-i-the-lost-book-of-perceptrons/neuron-express-0/README.md) |
 | AI Foundations I - The Lost Book of Perceptrons | neuron-meet-0 | AI / Networking | Solved | [writeup](../challenges/ai-foundations-i-the-lost-book-of-perceptrons/neuron-meet-0/README.md) |
