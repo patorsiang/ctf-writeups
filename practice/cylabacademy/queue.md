@@ -17,6 +17,8 @@ Use this file as the lightweight inbox for new learning challenges.
 
 | Date | Learning Path | Challenge | Link | Lesson |
 | --- | --- | --- | --- | --- |
+| 2026-09-27 | AI Foundations I - The Lost Book of Perceptrons | perceptron-play-naught | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-play-naught/README.md) | Ignore irrelevant x by setting `w1 = 0`; use y to separate the classes with boundary `y = 0`. |
+| 2026-09-27 | AI Foundations I - The Lost Book of Perceptrons | perceptron-play-2d-alpha | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-play-2d-alpha/README.md) | Set both weights positive so the line `x + y = 0` separates the two classes. |
 | 2026-09-20 | AI Foundations I - The Lost Book of Perceptrons | perceptron-play-1d-alpha | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-play-1d-alpha/README.md) | Use one controlled bias change to move the threshold between the nearest opposite labels. |
 | 2026-08-01 | The Beginner's Guide to the Challenge Library | obedient-cat | [writeup](challenges/beginners-guide-to-the-challenge-library/obedient-cat/README.md) | Use `cat` to inspect a simple text file. |
 | 2026-08-01 | The Beginner's Guide to the Challenge Library | super-ssh | [writeup](challenges/beginners-guide-to-the-challenge-library/super-ssh/README.md) | Use `ssh -p` when the service runs on a non-default port. |
