@@ -31,6 +31,7 @@ writeup, no AI, timer running. Record the result here and in the writeup's
 
 | Date | Learning Path | Challenge | Link | Lesson |
 | --- | --- | --- | --- | --- |
+| 2026-10-01 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-classic-0 | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-classic-0/README.md) | Gentle data: the default rate 0.02 reached 100% in 16 updates because the starting line was already close. |
 | 2026-09-27 | AI Foundations I - The Lost Book of Perceptrons | perceptron-play-naught | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-play-naught/README.md) | Ignore irrelevant x by setting `w1 = 0`; use y to separate the classes with boundary `y = 0`. |
 | 2026-09-27 | AI Foundations I - The Lost Book of Perceptrons | perceptron-play-2d-alpha | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-play-2d-alpha/README.md) | Set both weights positive so the line `x + y = 0` separates the two classes. |
 | 2026-09-20 | AI Foundations I - The Lost Book of Perceptrons | perceptron-play-1d-alpha | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-play-1d-alpha/README.md) | Use one controlled bias change to move the threshold between the nearest opposite labels. |
