@@ -31,6 +31,7 @@ writeup, no AI, timer running. Record the result here and in the writeup's
 
 | Date | Learning Path | Challenge | Link | Lesson |
 | --- | --- | --- | --- | --- |
+| 2026-10-01 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-classic-2-alpha | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-classic-2-alpha/README.md) | With only 16 updates, working rates are not one neat range: 0.18-0.19, 0.24-0.29, 0.4, 0.75-3 work; neighbours in between fail. |
 | 2026-10-01 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-classic-1 | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-classic-1/README.md) | Same gentle data as Classic 0: every rate from 0.02 to 0.07 reached 100% in 16 updates; the upper limit is still untested. |
 | 2026-10-01 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-classic-0 | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-classic-0/README.md) | Gentle data: the default rate 0.02 reached 100% in 16 updates because the starting line was already close. |
 | 2026-09-27 | AI Foundations I - The Lost Book of Perceptrons | perceptron-play-naught | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-play-naught/README.md) | Ignore irrelevant x by setting `w1 = 0`; use y to separate the classes with boundary `y = 0`. |

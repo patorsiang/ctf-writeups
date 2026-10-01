@@ -13,6 +13,7 @@ This index organizes CyLab Academy work by platform learning path first, then by
 
 | Learning Path | Challenge | Category | Status | Writeup |
 | --- | --- | --- | --- | --- |
+| AI Foundations I - The Lost Book of Perceptrons | perceptron-train-classic-2-alpha | AI | Solved | [writeup](../challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-classic-2-alpha/README.md) |
 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-classic-1 | AI | Solved | [writeup](../challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-classic-1/README.md) |
 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-classic-0 | AI | Solved | [writeup](../challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-classic-0/README.md) |
 | AI Foundations I - The Lost Book of Perceptrons | perceptron-play-1d-alpha | AI / Networking | Solved | [writeup](../challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-play-1d-alpha/README.md) |
