@@ -25,6 +25,22 @@ practice/cylabacademy/challenges/<learning-path>/<challenge-name>/
 
 Start from [templates/cylabacademy-challenge-readme.md](templates/cylabacademy-challenge-readme.md), and track planned work in [practice/cylabacademy/queue.md](practice/cylabacademy/queue.md).
 
+## Learning Rules
+
+The writeup is how I find out whether I learned something, not just a record
+that the challenge got solved.
+
+- **Prediction first.** Before any hint, tool, or AI help, write one line in
+  `## Prediction`: "I think this is X because Y." Don't edit it afterward. Score
+  it once solved.
+- **Solve Log during the solve.** Write `## Solve Log` in my own words while
+  working, wrong guesses included. Don't polish it afterward. Claude can help
+  tidy the walkthrough, but not the log.
+- **Re-solve anything I needed help on.** About 7 days later, redo it cold: no notes,
+  no AI, timer running. Track it in the `Re-solve` section of
+  [practice/cylabacademy/queue.md](practice/cylabacademy/queue.md). A category
+  block only counts as done once its re-solves pass.
+
 ## Writeup Rules
 
 - Mark incomplete work as `Status: TODO`.

@@ -7,6 +7,7 @@
 - Difficulty: Medium (the flaw is a one-line protocol ordering mistake;
   exploiting it needs a birthday attack)
 - Status: Solved
+- Re-solve: due 2026-10-08
 - Files: [chall.py](chall.py), [solve.py](solve.py),
   [test_recon.py](test_recon.py), [main.py](main.py), [Dockerfile](Dockerfile)
   (`flag.txt` is required alongside `chall.py` to run locally — see

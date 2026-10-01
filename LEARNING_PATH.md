@@ -9,7 +9,8 @@ New structured practice should be tracked in [practice/cylabacademy](practice/cy
 - Linux shell: navigation, file inspection, permissions, processes, networking basics.
 - Git hygiene: small commits, clear names, clean repo structure, no local/editor junk.
 - Python basics: bytes, files, sockets, encodings, regular expressions.
-- Writeup habit: record what was tried, what failed, and the final reasoning.
+- Writeup habit: predict before peeking, then log what was tried and what failed while solving, not afterward. See the Learning Rules in [CONTRIBUTING.md](CONTRIBUTING.md).
+- Retrieval habit: cold re-solve of anything I didn't solve alone, about 7 days later.
 
 Practice targets:
 

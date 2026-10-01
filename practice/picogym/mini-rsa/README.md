@@ -6,6 +6,7 @@
 - Category: Cryptography
 - Difficulty: Medium
 - Status: Solved
+- Re-solve: due 2026-10-08
 - Files: [values.txt](values.txt), [solve.py](solve.py), [test_recon.py](test_recon.py)
 - Skills Learned: Low-public-exponent RSA attack (e=3), integer nth-root
   recovery, checking a stated assumption instead of trusting the blurb

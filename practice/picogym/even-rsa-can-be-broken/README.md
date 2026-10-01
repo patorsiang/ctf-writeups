@@ -6,6 +6,7 @@
 - Category: Cryptography
 - Difficulty: Easy
 - Status: Solved
+- Re-solve: due 2026-10-08
 - Files: [encrypt.py](encrypt.py), [solve.py](solve.py), [test_recon.py](test_recon.py)
 - Skills Learned: RSA internals (modulus parity as a factoring shortcut),
   distinguishing a real vulnerability from a decoy title, testing an

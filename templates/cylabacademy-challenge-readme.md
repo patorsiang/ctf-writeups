@@ -9,6 +9,7 @@
 - Status: Queued
 - Started:
 - Completed:
+- Re-solve: n/a | due YYYY-MM-DD | passed YYYY-MM-DD (Nm) | failed YYYY-MM-DD
 - Files:
 - Skills Learned:
 
@@ -16,13 +17,27 @@
 
 Summarize what the challenge provides and what it asks you to recover or prove.
 
+## Prediction
+
+Write this before any hint, tool, or AI help, and don't edit it afterward:
+"I think this is X because Y." Score it once solved: right / partly / wrong,
+and say what you missed.
+
+- Guess:
+- Score:
+
 ## First Observations
 
 Record the first facts before solving: file types, source snippets, network behavior, visible hints, or constraints.
 
-## What I Tried
+## Solve Log
 
-Keep short notes on attempts, including false starts when they explain the final path.
+Write this while you solve, in your own words, including wrong guesses. Don't
+tidy it up afterward. One entry per hypothesis:
+
+- **Thought:** what I suspected and why
+  - **Tried:** command, input, or code
+  - **Result:** what happened, and what it ruled in or out
 
 ## Key Idea
 

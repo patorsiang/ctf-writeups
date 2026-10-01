@@ -13,6 +13,20 @@ Use this file as the lightweight inbox for new learning challenges.
 | --- | --- | --- | --- |
 |  |  |  |  |
 
+## Re-solve
+
+If I needed hints or a solve path, it isn't a skill yet. Add it here, and
+about 7 days after the solve redo it cold: no notes, no
+writeup, no AI, timer running. Record the result here and in the writeup's
+`Re-solve` line. A failed re-solve goes back in the queue for another 7 days.
+
+| Due | Challenge | Link | Result |
+| --- | --- | --- | --- |
+| 2026-10-08 | LA CTF 2025 Bigram Times | [writeup](../../events/2025/la-ctf/crypto/bigram-times/README.md) | |
+| 2026-10-08 | LA CTF 2025 Crypto Civilization | [writeup](../../events/2025/la-ctf/crypto/crypto-civilization/README.md) | |
+| 2026-10-08 | picoGym EVEN RSA CAN BE BROKEN??? | [writeup](../picogym/even-rsa-can-be-broken/README.md) | |
+| 2026-10-08 | picoGym Mini RSA | [writeup](../picogym/mini-rsa/README.md) | |
+
 ## Done Recently
 
 | Date | Learning Path | Challenge | Link | Lesson |

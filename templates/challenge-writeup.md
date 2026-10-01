@@ -8,6 +8,7 @@
 - Category:
 - Difficulty: Unknown
 - Status: TODO
+- Re-solve: n/a | due YYYY-MM-DD | passed YYYY-MM-DD (Nm) | failed YYYY-MM-DD
 - Files:
 - Skills Learned:
 
@@ -15,9 +16,23 @@
 
 Summarize what the challenge gives you and what it asks you to recover.
 
-## What I Tried
+## Prediction
 
-Record observations, commands, false starts, and why each step mattered.
+Write this before any hint, tool, or AI help, and don't edit it afterward:
+"I think this is X because Y." Score it once solved: right / partly / wrong,
+and say what you missed.
+
+- Guess:
+- Score:
+
+## Solve Log
+
+Write this while you solve, in your own words, including wrong guesses. Don't
+tidy it up afterward. One entry per hypothesis:
+
+- **Thought:** what I suspected and why
+  - **Tried:** command, input, or code
+  - **Result:** what happened, and what it ruled in or out
 
 ## Key Idea
 

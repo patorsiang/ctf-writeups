@@ -6,6 +6,7 @@
 - Category: Crypto
 - Difficulty: Medium (the cipher is easy to invert; the ambiguity is the challenge)
 - Status: Solved
+- Re-solve: due 2026-10-08
 - Files: [chall.py](chall.py), [solve.py](solve.py), [test_recon.py](test_recon.py),
   [main.py](main.py)
 - Skills Learned: Multiplicative ciphers over `Z/pZ`, recognising a
