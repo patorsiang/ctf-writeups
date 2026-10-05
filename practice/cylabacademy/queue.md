@@ -31,6 +31,7 @@ writeup, no AI, timer running. Record the result here and in the writeup's
 
 | Date | Learning Path | Challenge | Link | Lesson |
 | --- | --- | --- | --- | --- |
+| 2026-10-05 | AI Foundations I - The Lost Book of Perceptrons | assistant-or-agent | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/assistant-or-agent/README.md) | Assistants advise, agents act; give agents autonomy only behind approval gates, allowlists, and budget caps. |
 | 2026-10-01 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-classic-2-alpha | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-classic-2-alpha/README.md) | With only 16 updates, working rates are not one neat range: 0.18-0.19, 0.24-0.29, 0.4, 0.75-3 work; neighbours in between fail. |
 | 2026-10-01 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-classic-1 | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-classic-1/README.md) | Same gentle data as Classic 0: every rate from 0.02 to 0.07 reached 100% in 16 updates; the upper limit is still untested. |
 | 2026-10-01 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-classic-0 | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-classic-0/README.md) | Gentle data: the default rate 0.02 reached 100% in 16 updates because the starting line was already close. |

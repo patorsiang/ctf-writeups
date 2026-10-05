@@ -1,0 +1,245 @@
+$ nc xebec.cylabacademy.net 41278
+ASSISTANT OR AGENT?
+A Trust-But-Verify Universe Interactive Fiction
+
+The year is 2031. One week after the science fair proposal adventure, Ren has
+become the unofficial tech helper for everything at Westbrook High.
+
+---
+(Press Enter to continue...)
+---
+
+Tonight's mission: prepare tomorrow's Community Cleanup Night. Posters,
+signups, snacks, schedules. The whole school is counting on Ren.
+
+---
+(Press Enter to continue...)
+---
+
+A familiar chime. ARIA appears on screen.
+
+---
+(Press Enter to continue...)
+---
+
+"Hey Ren," ARIA says. "Before we start, choose my operating style:"
+
+---
+(Press Enter to continue...)
+---
+
+"Assistant mode: I answer questions and draft things for you."
+
+---
+(Press Enter to continue...)
+---
+
+"Agent mode: I can plan steps, use tools, and act in connected systems if you
+grant permission."
+
+---
+(Press Enter to continue...)
+---
+
+Ren squints. "So... same brain, different level of hands?"
+
+---
+(Press Enter to continue...)
+---
+
+"Exactly," ARIA says. "Let's learn this the fun way."
+
+---
+(Press Enter to continue...)
+---
+
+=== SCENE 1: THE SCHEDULE SWITCHEROO ===
+
+Twenty-seven volunteers signed up online. Two teachers emailed special
+requests. One student can only work after soccer practice. Another is allergic
+to every known cleaning product except plain vinegar.
+
+---
+(Press Enter to continue...)
+---
+
+Ren groans. "I need a schedule in ten minutes."
+
+---
+(Press Enter to continue...)
+---
+
+Options:
+A) *Use ARIA as an assistant: ask for a scheduling strategy, then assign shifts
+yourself*
+B) *Use ARIA as a fully autonomous agent and let it send final schedules
+immediately*
+C) *Use ARIA as an agent, but require a human approval checkpoint before any
+messages are sent*
+[a/b/c] > C
+
+ARIA planning with approval gate...: 100%|███████████████████ [time left: 00:00]
+
+ARIA prepares a full draft schedule and queues outgoing messages, but nothing
+sends yet.
+
+---
+(Press Enter to continue...)
+---
+
+Ren reviews three flagged edge cases, makes tiny edits, then approves.
+
+---
+(Press Enter to continue...)
+---
+
+Messages go out cleanly. No double-bookings. No accidental "Hi Mom."
+
+---
+(Press Enter to continue...)
+---
+
+"Excellent agent pattern," ARIA says. "Autonomy for the tedious parts, human
+checkpoint for high-impact actions."
+
+---
+(Press Enter to continue...)
+---
+
+=== SCENE 2: THE SOURCE SCAVENGER HUNT ===
+
+Now Ren needs three trustworthy facts for a cleanup poster: local litter
+impact, safe disposal guidance, and volunteer safety tips.
+
+---
+(Press Enter to continue...)
+---
+
+Options:
+A) *Ask assistant-mode ARIA for three facts and paste them directly onto the
+poster*
+B) *Ask agent-mode ARIA to browse approved sites, collect citations, and attach
+a verification bundle*
+[a/b] > B
+
+ARIA browsing approved sources...: 100%|█████████████████████ [time left: 00:00]
+
+ARIA visits a pre-approved source list, extracts key quotes, stores link
+snapshots, and returns a mini evidence packet.
+
+---
+(Press Enter to continue...)
+---
+
+Ren checks the packet and sees confidence notes per claim: high, medium, or
+needs review.
+
+---
+(Press Enter to continue...)
+---
+
+"That is agent behavior," ARIA says. "I used tools and memory to complete a
+multi-step task beyond chat."
+
+---
+(Press Enter to continue...)
+---
+
+=== SCENE 3: THE SNACK BUDGET BOSS FIGHT ===
+
+Principal Vega allocated $120 for event snacks. Ren still has to print maps, so
+this budget cannot explode.
+
+---
+(Press Enter to continue...)
+---
+
+Options:
+A) *Ask assistant-mode ARIA for a shopping list, then place the order yourself*
+B) *Let agent-mode ARIA place the order with guardrails: $120 cap, approved
+stores, and confirmation required for substitutions*
+C) *Tell agent-mode ARIA: "Handle snacks however you want"*
+[a/b/c] > B
+
+ARIA placing constrained order...: 100%|█████████████████████ [time left: 00:00]
+
+ARIA finds one item out of stock, asks for substitution approval, then finishes
+at $119.42.
+
+---
+(Press Enter to continue...)
+---
+
+"Perfect," Ren says. "Fast and controlled."
+
+---
+(Press Enter to continue...)
+---
+
+"Exactly," ARIA says. "Agents need boundaries: budget, tool scope, and
+escalation rules."
+
+---
+(Press Enter to continue...)
+---
+
+=== ENDING ===
+
+Cleanup Night launches the next day with functioning schedules, sourced facts,
+and mostly non-mythical snacks.
+
+---
+(Press Enter to continue...)
+---
+
+Ren smiles. "Okay. I think I get it now."
+
+---
+(Press Enter to continue...)
+---
+
+"Say it back to me," ARIA says.
+
+---
+(Press Enter to continue...)
+---
+
+"Assistant: gives me content in chat. Agent: can take actions with tools and
+memory in real systems."
+
+---
+(Press Enter to continue...)
+---
+
+"And?" ARIA asks.
+
+---
+(Press Enter to continue...)
+---
+
+"More autonomy means more leverage... and more responsibility. So we use
+permissions, guardrails, and human approval where impact is high."
+
+---
+(Press Enter to continue...)
+---
+
+"Top marks," ARIA says. "Also, here's one action you can absolutely verify:
+academy{4551574n7_0r_463n7_846d23d5}"
+
+---
+(Press Enter to continue...)
+---
+
+END OF ASSISTANT OR AGENT?
+
+Key takeaways:
+1. AI assistants respond with outputs; they do not act unless a human does.
+2. AI agents can plan and execute actions with tools and memory.
+3. Agent actions create real side effects, so scope and permissions matter.
+4. Guardrails (budgets, allowlists, approval gates) make autonomy safer.
+5. academy{4551574n7_0r_463n7_846d23d5} is a real flag - submit it for points!
+
+---
+(Press Enter to continue...)
+---
