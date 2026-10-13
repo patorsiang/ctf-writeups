@@ -22,6 +22,9 @@ writeup, no AI, timer running. Record the result here and in the writeup's
 
 | Due | Challenge | Link | Result |
 | --- | --- | --- | --- |
+| 2026-10-20 | CyLab Academy Perceptron Train XOR | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xor/README.md) | |
+| 2026-10-20 | CyLab Academy Perceptron Train XNOR | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xnor/README.md) | |
+| 2026-10-20 | CyLab Academy Perceptron Train Hole in Middle | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-hole-in-middle/README.md) | |
 | 2026-10-08 | LA CTF 2025 Bigram Times | [writeup](../../events/2025/la-ctf/crypto/bigram-times/README.md) | |
 | 2026-10-08 | LA CTF 2025 Crypto Civilization | [writeup](../../events/2025/la-ctf/crypto/crypto-civilization/README.md) | |
 | 2026-10-08 | picoGym EVEN RSA CAN BE BROKEN??? | [writeup](../picogym/even-rsa-can-be-broken/README.md) | |
@@ -31,6 +34,9 @@ writeup, no AI, timer running. Record the result here and in the writeup's
 
 | Date | Learning Path | Challenge | Link | Lesson |
 | --- | --- | --- | --- | --- |
+| 2026-10-13 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-xor | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xor/README.md) | XOR labels alternate corners, so one straight boundary cannot separate them; rate 0.2 reached the 75% target in two updates. |
+| 2026-10-13 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-xnor | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xnor/README.md) | XNOR labels alternate corners too; rates 0.02 and 0.20 both reached the 75% target. |
+| 2026-10-13 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-hole-in-middle | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-hole-in-middle/README.md) | At rate 0.20, the perceptron predicts class 1 for every point: eight correct ring points and one missed center point give 88.9%. |
 | 2026-10-05 | AI Foundations I - The Lost Book of Perceptrons | assistant-or-agent | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/assistant-or-agent/README.md) | Assistants advise, agents act; give agents autonomy only behind approval gates, allowlists, and budget caps. |
 | 2026-10-01 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-classic-2-alpha | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-classic-2-alpha/README.md) | With only 16 updates, working rates are not one neat range: 0.18-0.19, 0.24-0.29, 0.4, 0.75-3 work; neighbours in between fail. |
 | 2026-10-01 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-classic-1 | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-classic-1/README.md) | Same gentle data as Classic 0: every rate from 0.02 to 0.07 reached 100% in 16 updates; the upper limit is still untested. |
