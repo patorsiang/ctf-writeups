@@ -22,6 +22,7 @@ writeup, no AI, timer running. Record the result here and in the writeup's
 
 | Due | Challenge | Link | Result |
 | --- | --- | --- | --- |
+| 2026-10-28 | CyLab Academy Perceptron Train 3-Bit Parity | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-3-bit-parity/README.md) | |
 | 2026-10-20 | CyLab Academy Perceptron Train XOR | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xor/README.md) | |
 | 2026-10-20 | CyLab Academy Perceptron Train XNOR | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xnor/README.md) | |
 | 2026-10-20 | CyLab Academy Perceptron Train Hole in Middle | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-hole-in-middle/README.md) | |
@@ -34,6 +35,7 @@ writeup, no AI, timer running. Record the result here and in the writeup's
 
 | Date | Learning Path | Challenge | Link | Lesson |
 | --- | --- | --- | --- | --- |
+| 2026-10-21 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-3-bit-parity | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-3-bit-parity/README.md) | One plane classified six of eight parity points; rate `0.20` reached 75% under the 16-step limit. |
 | 2026-10-13 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-xor | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xor/README.md) | XOR labels alternate corners, so one straight boundary cannot separate them; rate 0.2 reached the 75% target in two updates. |
 | 2026-10-13 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-xnor | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xnor/README.md) | XNOR labels alternate corners too; rates 0.02 and 0.20 both reached the 75% target. |
 | 2026-10-13 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-hole-in-middle | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-hole-in-middle/README.md) | At rate 0.20, the perceptron predicts class 1 for every point: eight correct ring points and one missed center point give 88.9%. |
