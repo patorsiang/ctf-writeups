@@ -35,6 +35,7 @@ writeup, no AI, timer running. Record the result here and in the writeup's
 
 | Date | Learning Path | Challenge | Link | Lesson |
 | --- | --- | --- | --- | --- |
+| 2026-10-23 | The Beginner's Guide to the Challenge Library | convertme-py | [writeup](challenges/beginners-guide-to-the-challenge-library/convertme-py/README.md) | Divide by 2, then read remainders from bottom to top; use an interactive terminal for `input()`. |
 | 2026-10-21 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-3-bit-parity | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-3-bit-parity/README.md) | One plane classified six of eight parity points; rate `0.20` reached 75% under the 16-step limit. |
 | 2026-10-13 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-xor | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xor/README.md) | XOR labels alternate corners, so one straight boundary cannot separate them; rate 0.2 reached the 75% target in two updates. |
 | 2026-10-13 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-xnor | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xnor/README.md) | XNOR labels alternate corners too; rates 0.02 and 0.20 both reached the 75% target. |

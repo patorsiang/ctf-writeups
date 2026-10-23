@@ -33,6 +33,7 @@ This index organizes CyLab Academy work by platform learning path first, then by
 | The Beginner's Guide to the Challenge Library | mod-26 | Crypto | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/mod-26/README.md) |
 | The Beginner's Guide to the Challenge Library | warmed-up | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/warmed-up/README.md) |
 | The Beginner's Guide to the Challenge Library | 2warm | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/2warm/README.md) |
+| The Beginner's Guide to the Challenge Library | convertme-py | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/convertme-py/README.md) |
 | The Beginner's Guide to the Challenge Library | bases | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/bases/README.md) |
 | The Beginner's Guide to the Challenge Library | wave-a-flag | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/wave-a-flag/README.md) |
 | The Beginner's Guide to the Challenge Library | tab-tab-attack | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/tab-tab-attack/README.md) |
