@@ -4,9 +4,9 @@ This index organizes CyLab Academy work by platform learning path first, then by
 
 ## Current Focus
 
-- Path: The Beginner's Guide to the Challenge Library
+- Path: General Skills in CTF's
 - Goal: Build basic command-line confidence for reading files and connecting to services.
-- Current challenge:
+- Current challenge: plumbing (flag recovered; portal submission not confirmed)
 - Blocked by:
 
 ## Path Index
@@ -52,6 +52,11 @@ This index organizes CyLab Academy work by platform learning path first, then by
 | The Beginner's Guide to the Challenge Library | pw-crack-3 | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/pw-crack-3/README.md) |
 | The Beginner's Guide to the Challenge Library | pw-crack-4 | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/pw-crack-4/README.md) |
 | The Beginner's Guide to the Challenge Library | pw-crack-5 | General Skills | Solved | [writeup](../challenges/beginners-guide-to-the-challenge-library/pw-crack-5/README.md) |
+| General Skills in CTF's | Nice netcat... | General Skills / Networking | Solved | [writeup](../challenges/general-skills-in-ctfs/nice-netcat/README.md) |
+| General Skills in CTF's | Magikarp Ground Mission | General Skills / SSH | Solved | [writeup](../challenges/general-skills-in-ctfs/magikarp-ground-mission/README.md) |
+| General Skills in CTF's | First Find | General Skills / File Search | Solved | [writeup](../challenges/general-skills-in-ctfs/first-find/README.md) |
+| General Skills in CTF's | Static Ain't Always Noise | General Skills / Static Analysis | Solved | [writeup](../challenges/general-skills-in-ctfs/static-aint-always-noise/README.md) |
+| General Skills in CTF's | plumbing | General Skills / Pipelines | Solved | [writeup](../challenges/general-skills-in-ctfs/plumbing/README.md) |
 
 ## Cross-Links To Legacy picoGym
 

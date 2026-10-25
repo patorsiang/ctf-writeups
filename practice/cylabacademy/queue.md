@@ -22,6 +22,11 @@ writeup, no AI, timer running. Record the result here and in the writeup's
 
 | Due | Challenge | Link | Result |
 | --- | --- | --- | --- |
+| 2026-11-01 | CyLab Academy First Find | [writeup](challenges/general-skills-in-ctfs/first-find/README.md) | |
+| 2026-11-01 | CyLab Academy Static Ain't Always Noise | [writeup](challenges/general-skills-in-ctfs/static-aint-always-noise/README.md) | |
+| 2026-11-01 | CyLab Academy plumbing | [writeup](challenges/general-skills-in-ctfs/plumbing/README.md) | |
+| 2026-10-31 | CyLab Academy Magikarp Ground Mission | [writeup](challenges/general-skills-in-ctfs/magikarp-ground-mission/README.md) | |
+| 2026-10-31 | CyLab Academy Nice netcat... | [writeup](challenges/general-skills-in-ctfs/nice-netcat/README.md) | |
 | 2026-10-28 | CyLab Academy Perceptron Train 3-Bit Parity | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-3-bit-parity/README.md) | |
 | 2026-10-20 | CyLab Academy Perceptron Train XOR | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xor/README.md) | |
 | 2026-10-20 | CyLab Academy Perceptron Train XNOR | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xnor/README.md) | |
@@ -35,6 +40,11 @@ writeup, no AI, timer running. Record the result here and in the writeup's
 
 | Date | Learning Path | Challenge | Link | Lesson |
 | --- | --- | --- | --- | --- |
+| 2026-10-25 | General Skills in CTF's | plumbing | [writeup](challenges/general-skills-in-ctfs/plumbing/README.md) | Use `tee` to save a live stream while piping it to `grep`; direct terminal output was truncated. Portal submission remains unconfirmed. |
+| 2026-10-25 | General Skills in CTF's | Static Ain't Always Noise | [writeup](challenges/general-skills-in-ctfs/static-aint-always-noise/README.md) | `ltdis.sh` runs `objdump` and `strings`; the flag was in the strings report at offset `0x3020`. Portal submission remains unconfirmed. |
+| 2026-10-25 | General Skills in CTF's | First Find | [writeup](challenges/general-skills-in-ctfs/first-find/README.md) | Search nested extracted files by name; `find` traverses hidden directories. Portal submission remains unconfirmed. |
+| 2026-10-24 | General Skills in CTF's | Magikarp Ground Mission | [writeup](challenges/general-skills-in-ctfs/magikarp-ground-mission/README.md) | SSH uses `-p` for ports; follow instructions through `/` and home to collect three flag fragments. Portal submission remains unconfirmed. |
+| 2026-10-24 | General Skills in CTF's | Nice netcat... | [writeup](challenges/general-skills-in-ctfs/nice-netcat/README.md) | Convert decimal ASCII output to characters; portal submission remains unconfirmed. |
 | 2026-10-23 | The Beginner's Guide to the Challenge Library | convertme-py | [writeup](challenges/beginners-guide-to-the-challenge-library/convertme-py/README.md) | Divide by 2, then read remainders from bottom to top; use an interactive terminal for `input()`. |
 | 2026-10-21 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-3-bit-parity | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-3-bit-parity/README.md) | One plane classified six of eight parity points; rate `0.20` reached 75% under the 16-step limit. |
 | 2026-10-13 | AI Foundations I - The Lost Book of Perceptrons | perceptron-train-xor | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xor/README.md) | XOR labels alternate corners, so one straight boundary cannot separate them; rate 0.2 reached the 75% target in two updates. |

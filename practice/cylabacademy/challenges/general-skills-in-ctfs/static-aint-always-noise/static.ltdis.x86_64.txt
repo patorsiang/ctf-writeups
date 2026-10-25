@@ -1,0 +1,84 @@
+
+practice/cylabacademy/challenges/general-skills-in-ctfs/static-aint-always-noise/static:	file format elf64-x86-64
+
+Disassembly of section .text:
+
+0000000000001060 <_start>:
+    1060: f3 0f 1e fa                  	endbr64
+    1064: 31 ed                        	xorl	%ebp, %ebp
+    1066: 49 89 d1                     	movq	%rdx, %r9
+    1069: 5e                           	popq	%rsi
+    106a: 48 89 e2                     	movq	%rsp, %rdx
+    106d: 48 83 e4 f0                  	andq	$-0x10, %rsp
+    1071: 50                           	pushq	%rax
+    1072: 54                           	pushq	%rsp
+    1073: 45 31 c0                     	xorl	%r8d, %r8d
+    1076: 31 c9                        	xorl	%ecx, %ecx
+    1078: 48 8d 3d ca 00 00 00         	leaq	0xca(%rip), %rdi        # 0x1149 <main>
+    107f: ff 15 53 2f 00 00            	callq	*0x2f53(%rip)           # 0x3fd8 <_GLOBAL_OFFSET_TABLE_+0x20>
+    1085: f4                           	hlt
+    1086: 66 2e 0f 1f 84 00 00 00 00 00	nopw	%cs:(%rax,%rax)
+
+0000000000001090 <deregister_tm_clones>:
+    1090: 48 8d 3d a9 2f 00 00         	leaq	0x2fa9(%rip), %rdi      # 0x4040 <completed.0>
+    1097: 48 8d 05 a2 2f 00 00         	leaq	0x2fa2(%rip), %rax      # 0x4040 <completed.0>
+    109e: 48 39 f8                     	cmpq	%rdi, %rax
+    10a1: 74 15                        	je	0x10b8 <deregister_tm_clones+0x28>
+    10a3: 48 8b 05 36 2f 00 00         	movq	0x2f36(%rip), %rax      # 0x3fe0 <_GLOBAL_OFFSET_TABLE_+0x28>
+    10aa: 48 85 c0                     	testq	%rax, %rax
+    10ad: 74 09                        	je	0x10b8 <deregister_tm_clones+0x28>
+    10af: ff e0                        	jmpq	*%rax
+    10b1: 0f 1f 80 00 00 00 00         	nopl	(%rax)
+    10b8: c3                           	retq
+    10b9: 0f 1f 80 00 00 00 00         	nopl	(%rax)
+
+00000000000010c0 <register_tm_clones>:
+    10c0: 48 8d 3d 79 2f 00 00         	leaq	0x2f79(%rip), %rdi      # 0x4040 <completed.0>
+    10c7: 48 8d 35 72 2f 00 00         	leaq	0x2f72(%rip), %rsi      # 0x4040 <completed.0>
+    10ce: 48 29 fe                     	subq	%rdi, %rsi
+    10d1: 48 89 f0                     	movq	%rsi, %rax
+    10d4: 48 c1 ee 3f                  	shrq	$0x3f, %rsi
+    10d8: 48 c1 f8 03                  	sarq	$0x3, %rax
+    10dc: 48 01 c6                     	addq	%rax, %rsi
+    10df: 48 d1 fe                     	sarq	%rsi
+    10e2: 74 14                        	je	0x10f8 <register_tm_clones+0x38>
+    10e4: 48 8b 05 05 2f 00 00         	movq	0x2f05(%rip), %rax      # 0x3ff0 <_GLOBAL_OFFSET_TABLE_+0x38>
+    10eb: 48 85 c0                     	testq	%rax, %rax
+    10ee: 74 08                        	je	0x10f8 <register_tm_clones+0x38>
+    10f0: ff e0                        	jmpq	*%rax
+    10f2: 66 0f 1f 44 00 00            	nopw	(%rax,%rax)
+    10f8: c3                           	retq
+    10f9: 0f 1f 80 00 00 00 00         	nopl	(%rax)
+
+0000000000001100 <__do_global_dtors_aux>:
+    1100: f3 0f 1e fa                  	endbr64
+    1104: 80 3d 35 2f 00 00 00         	cmpb	$0x0, 0x2f35(%rip)      # 0x4040 <completed.0>
+    110b: 75 2b                        	jne	0x1138 <__do_global_dtors_aux+0x38>
+    110d: 55                           	pushq	%rbp
+    110e: 48 83 3d e2 2e 00 00 00      	cmpq	$0x0, 0x2ee2(%rip)      # 0x3ff8 <_GLOBAL_OFFSET_TABLE_+0x40>
+    1116: 48 89 e5                     	movq	%rsp, %rbp
+    1119: 74 0c                        	je	0x1127 <__do_global_dtors_aux+0x27>
+    111b: 48 8b 3d e6 2e 00 00         	movq	0x2ee6(%rip), %rdi      # 0x4008 <__dso_handle>
+    1122: e8 19 ff ff ff               	callq	0x1040 <puts@GLIBC_2.2.5+0x1040>
+    1127: e8 64 ff ff ff               	callq	0x1090 <deregister_tm_clones>
+    112c: c6 05 0d 2f 00 00 01         	movb	$0x1, 0x2f0d(%rip)      # 0x4040 <completed.0>
+    1133: 5d                           	popq	%rbp
+    1134: c3                           	retq
+    1135: 0f 1f 00                     	nopl	(%rax)
+    1138: c3                           	retq
+    1139: 0f 1f 80 00 00 00 00         	nopl	(%rax)
+
+0000000000001140 <frame_dummy>:
+    1140: f3 0f 1e fa                  	endbr64
+    1144: e9 77 ff ff ff               	jmp	0x10c0 <register_tm_clones>
+
+0000000000001149 <main>:
+    1149: f3 0f 1e fa                  	endbr64
+    114d: 55                           	pushq	%rbp
+    114e: 48 89 e5                     	movq	%rsp, %rbp
+    1151: 48 8d 05 b0 0e 00 00         	leaq	0xeb0(%rip), %rax       # 0x2008 <_IO_stdin_used+0x8>
+    1158: 48 89 c7                     	movq	%rax, %rdi
+    115b: e8 f0 fe ff ff               	callq	0x1050 <puts@GLIBC_2.2.5+0x1050>
+    1160: b8 00 00 00 00               	movl	$0x0, %eax
+    1165: 5d                           	popq	%rbp
+    1166: c3                           	retq
