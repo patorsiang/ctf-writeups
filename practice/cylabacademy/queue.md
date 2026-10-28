@@ -22,6 +22,7 @@ writeup, no AI, timer running. Record the result here and in the writeup's
 
 | Due | Challenge | Link | Result |
 | --- | --- | --- | --- |
+| 2026-11-04 | CyLab Academy ASCII Numbers | [writeup](challenges/low-level-binary-intro/ascii-numbers/README.md) | |
 | 2026-11-01 | CyLab Academy First Find | [writeup](challenges/general-skills-in-ctfs/first-find/README.md) | |
 | 2026-11-01 | CyLab Academy Static Ain't Always Noise | [writeup](challenges/general-skills-in-ctfs/static-aint-always-noise/README.md) | |
 | 2026-11-01 | CyLab Academy plumbing | [writeup](challenges/general-skills-in-ctfs/plumbing/README.md) | |
@@ -40,6 +41,7 @@ writeup, no AI, timer running. Record the result here and in the writeup's
 
 | Date | Learning Path | Challenge | Link | Lesson |
 | --- | --- | --- | --- | --- |
+| 2026-10-28 | Low Level Binary Intro | ASCII Numbers | [writeup](challenges/low-level-binary-intro/ascii-numbers/README.md) | Decode each `0x`-prefixed byte as hexadecimal, then map the byte sequence to ASCII. Flag recovered; portal submission unconfirmed. |
 | 2026-10-25 | General Skills in CTF's | plumbing | [writeup](challenges/general-skills-in-ctfs/plumbing/README.md) | Use `tee` to save a live stream while piping it to `grep`; direct terminal output was truncated. Portal submission remains unconfirmed. |
 | 2026-10-25 | General Skills in CTF's | Static Ain't Always Noise | [writeup](challenges/general-skills-in-ctfs/static-aint-always-noise/README.md) | `ltdis.sh` runs `objdump` and `strings`; the flag was in the strings report at offset `0x3020`. Portal submission remains unconfirmed. |
 | 2026-10-25 | General Skills in CTF's | First Find | [writeup](challenges/general-skills-in-ctfs/first-find/README.md) | Search nested extracted files by name; `find` traverses hidden directories. Portal submission remains unconfirmed. |
