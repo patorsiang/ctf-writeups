@@ -6,7 +6,7 @@ This index organizes CyLab Academy work by platform learning path first, then by
 
 - Path: Low Level Binary Intro
 - Goal: Build assembly and debugger foundations for reverse engineering and binary exploitation.
-- Current challenge: ASCII Numbers (flag recovered; portal submission not confirmed)
+- Current challenge: Bit-O-Asm-2 (flag recovered; portal submission not confirmed)
 - Blocked by: None recorded.
 
 ## Path Index
@@ -58,6 +58,9 @@ This index organizes CyLab Academy work by platform learning path first, then by
 | General Skills in CTF's | Static Ain't Always Noise | General Skills / Static Analysis | Solved | [writeup](../challenges/general-skills-in-ctfs/static-aint-always-noise/README.md) |
 | General Skills in CTF's | plumbing | General Skills / Pipelines | Solved | [writeup](../challenges/general-skills-in-ctfs/plumbing/README.md) |
 | Low Level Binary Intro | ASCII Numbers | General Skills / ASCII | Solved | [writeup](../challenges/low-level-binary-intro/ascii-numbers/README.md) |
+| Low Level Binary Intro | Picker I | Reverse Engineering | Solved | [writeup](../challenges/low-level-binary-intro/picker-i/README.md) |
+| Low Level Binary Intro | Bit-O-Asm-1 | Reverse Engineering / x86-64 | Solved | [writeup](../challenges/low-level-binary-intro/bit-o-asm-1/README.md) |
+| Low Level Binary Intro | Bit-O-Asm-2 | Reverse Engineering / x86-64 | Solved | [writeup](../challenges/low-level-binary-intro/bit-o-asm-2/README.md) |
 
 ## Cross-Links To Legacy picoGym
 
