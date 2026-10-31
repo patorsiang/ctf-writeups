@@ -46,3 +46,22 @@ passwords.txt
 practice/cylabacademy/challenges/beginners-guide-to-the-challenge-library/tab-tab-attack/Addadshashanammu/
 
 .pytest_cache/
+
+# Claude in Chrome leftover snapshots
+.playwright-mcp/
+
+# SECPlayground Hackloween — regenerates from the (also-ignored) provided zip/apk,
+# or holds live session cookies that must never be committed
+events/2026/secplayground-hackloween/*/files/
+events/2026/secplayground-hackloween/*/extracted/
+events/2026/secplayground-hackloween/*/apk_extracted/
+events/2026/secplayground-hackloween/*/jadx_out/
+events/2026/secplayground-hackloween/*/backup_extracted/
+events/2026/secplayground-hackloween/*/backup_29/
+events/2026/secplayground-hackloween/*/backup_30/
+events/2026/secplayground-hackloween/*/dumped_repo/
+events/2026/secplayground-hackloween/grimhollow/artifacts/exfil/
+events/2026/secplayground-hackloween/grimhollow/artifacts/exfil_extracted/
+events/2026/secplayground-hackloween/*/cookies*.txt
+events/2026/secplayground-hackloween/*/*.apk
+events/2026/secplayground-hackloween/*/*.ab

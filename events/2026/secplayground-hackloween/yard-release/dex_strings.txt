@@ -1,0 +1,432 @@
+dex
+035
+xV4
+n0A
+n D
+n E
+n C
+T2
+n0F
+n B
+4n 
+p "
+n $
+Tn '
+n %
+nU#
+n i
+n i
+n0l
+n g
+n g
+n =
+p `
+p0?
+#DC
+q h
+n v
+n i
+p0?
+n v
+n v
+n v
+p@@
+p@@
+n g
+p@;
+n g
+p@;
+n g
+2n 
+n g
+n g
+p@;
+p@;
+p 
+p0)
+n $
+p0/
+p z
+n $
+p K
+n $
+n v
+n v
+'n 
+q S
+p0Z
+p W
+@5T
+n v
+n s
+n |
+n v
+n t
+n v
+n u
+h(.
+n v
+n v
+p05
+n J
+n M
+n $
+n $
+n g
+n f
+n v
+n v
+'n 
+n g
+p0I
+(Uq
+q a
+n v
+n v
+n v
+n v
+n v
+n v
+n v
+p0>
+n v
+n v
+n i
+n \
+n |
+p0Z
+p W
+@5c
+n v
+n s
+n |
+n v
+n t
+n v
+n u
+n v
+n v
+n v
+n v
+p@1
+0n J
+p0~
+p  
+n !
+n L
+p@@
+p@@
+n v
+n v
+p@@
+p@@
+n =
+p 
+p +
+p 
+p@@
+n &
+p -
+n g
+n g
+p 8
+n m
+n m
+n $
+p z
+p `
+n $
+n j
+n0o
+0n n
+n i
+n i
+n e
+n e
+n g
+n i
+n v
+n v
+n v
+n v
+n v
+n i
+p5`
+#"C
+q h
+n v
+$ D
+$ D
+ q a
+n v
+n v
+q@V
+Q`
+iZi
+g-X
+ZKx
+Z<<xZ
+ZxZi
+xxZx
+%02x
+/+$
+/api/yard/v2/release
+/api/yard/v2/stops
+/clerk/ask
+/healthz
+/release
+/yard/board
+18243
+<clinit>
+<init>
+ACCEPT_ALL
+AUTH
+Accept
+Alice
+s midnight handset 
+Ask about manifest A-101
+Authorization
+Bearer 
+Bearer token from backup
+BuildConfig.java
+CODE
+Check handset connection
+9Connection failed. Check the server address and network.
+Contacting the night desk
+Content-Type
+D8$$SyntheticClass
+Device secret from backup
+EVIDENCE
+Editable desk server URL
+#Enter a local path starting with /.
+Enter an HTTP or HTTPS URL.
+:Enter an HTTP or HTTPS desk address and install a browser.
+2Evidence preserved in this build: backup_rules.xml
+GET
+HANDSET REQUEST DESK
+HOLLOW POST / OCTOBER 31
+HTTP 
+HmacSHA256
+IIII
+LII
+LLI
+LLL
+LLLI
+LLLLL
+LLLZ
+LOCAL
+Landroid/app/Activity;
+Landroid/content/Context;
+Landroid/content/Intent;
+*Landroid/content/SharedPreferences$Editor;
+#Landroid/content/SharedPreferences;
+"Landroid/content/res/AssetManager;
+Landroid/graphics/Color;
+Landroid/net/Uri;
+Landroid/os/Bundle;
+Landroid/text/Editable;
+Landroid/util/Base64;
+#Landroid/view/View$OnClickListener;
+Landroid/view/View;
+Landroid/widget/Button;
+Landroid/widget/EditText;
+Landroid/widget/LinearLayout;
+Landroid/widget/ScrollView;
+Landroid/widget/TextView;
+#Lcom/hollowpost/client/BuildConfig;
+>Lcom/hollowpost/client/MainActivity$$ExternalSyntheticLambda0;
+>Lcom/hollowpost/client/MainActivity$$ExternalSyntheticLambda1;
+>Lcom/hollowpost/client/MainActivity$$ExternalSyntheticLambda2;
+>Lcom/hollowpost/client/MainActivity$$ExternalSyntheticLambda3;
+>Lcom/hollowpost/client/MainActivity$$ExternalSyntheticLambda4;
+>Lcom/hollowpost/client/MainActivity$$ExternalSyntheticLambda5;
+>Lcom/hollowpost/client/MainActivity$$ExternalSyntheticLambda6;
+$Lcom/hollowpost/client/MainActivity;
+Lcom/hollowpost/client/Permit;
+ Lcom/hollowpost/client/Scenario;
+Ldalvik/annotation/Throws;
+Ljava/io/BufferedReader;
+Ljava/io/InputStream;
+Ljava/io/InputStreamReader;
+Ljava/io/OutputStream;
+Ljava/io/Reader;
+Ljava/lang/Byte;
+Ljava/lang/CharSequence;
+Ljava/lang/Class;
+Ljava/lang/Exception;
+$Ljava/lang/IllegalArgumentException;
+Ljava/lang/Long;
+Ljava/lang/Object;
+Ljava/lang/Runnable;
+Ljava/lang/String;
+Ljava/lang/StringBuilder;
+Ljava/lang/System;
+Ljava/lang/Thread;
+Ljava/lang/Throwable;
+Ljava/net/CookieHandler;
+Ljava/net/CookieManager;
+Ljava/net/CookiePolicy;
+Ljava/net/CookieStore;
+Ljava/net/HttpURLConnection;
+Ljava/net/URL;
+Ljava/net/URLConnection;
+Ljava/net/URLEncoder;
+Ljava/security/Key;
+Ljavax/crypto/Mac;
+!Ljavax/crypto/spec/SecretKeySpec;
+MainActivity.java
+Open the night desk
+PORT
+POST
+RELEASE
+RESTORE_INDEX
+ROUTES
+Request failed: 
+SCHEME
+SIG
+STOPS
+Scenario.java
+Send desk request
+Sending request
+Server URL: use 10.0.2.2 in the Android emulator, or enter your server's reachable IP on a physical phone. You can change it whenever the IP changes.
+TITLE
+The graveyard gate
+UTF-8
+KUse evidence found in the APK and handset backup to inspect the night desk.
+VIIII
+VLL
+VLLL
+VLLLLLL
+VLLLLLLL
+X-Yard-Local
+X-Yard-Sig
+X-Yard-Ts
+ZLL
+[Ljava/lang/Object;
+[Ljava/lang/String;
+[[Ljava/lang/String;
+addRequestDesk
+addSuppressed
+addView
+android.intent.action.VIEW
+append
+application/json
+!application/x-www-form-urlencoded
+apply
+backup_rules.xml
+base
+c03
+c04
+canRelease
+charAt
+check
+close
+configure
+connect
+currentTimeMillis
+disconnect
+doFinal
+edit
+encode
+encodeToString
+endsWith
+equals
+f$0
+f$1
+f$2
+f$3
+f$4
+f$5
+f$6
+field
+format
+getAssets
+getBytes
+getClass
+getErrorStream
+getHost
+getInputStream
+getInstance
+getMessage
+getOutputStream
+getPreferences
+getResponseCode
+getScheme
+getSimpleName
+getString
+getText
+hmac
+hmacBytes
+http
+http://10.0.2.2:18243
+https
+indexOf
+init
+label
+:lambda$addRequestDesk$2$com-hollowpost-client-MainActivity
+3lambda$connect$5$com-hollowpost-client-MainActivity
+3lambda$connect$6$com-hollowpost-client-MainActivity
+4lambda$onCreate$0$com-hollowpost-client-MainActivity
+4lambda$onCreate$1$com-hollowpost-client-MainActivity
+7lambda$sendRequest$3$com-hollowpost-client-MainActivity
+7lambda$sendRequest$4$com-hollowpost-client-MainActivity
+length
+manifest.json
+onClick
+onCreate
+openConnection
+output
+parse
+path
+permit
+putString
+readLine
+release
+replaceAll
+requestBody
+requestPath
+requestSecret
+requestToken
+rgb
+run
+runOnUiThread
+sendRequest
+server
+setBackgroundColor
+setConnectTimeout
+setContentDescription
+setContentView
+setDefault
+setDoOutput
+setEnabled
+setHint
+setHintTextColor
+setInputType
+setMinLines
+setOnClickListener
+setOrientation
+setPadding
+setReadTimeout
+setRequestMethod
+setRequestProperty
+setSelectAllOnFocus
+setSingleLine
+setText
+setTextColor
+setTextIsSelectable
+setTextSize
+sign
+start
+startActivity
+startsWith
+substring
+toString
+toUpperCase
+trim
+value
+valueOf
+verifyLocal
+write
+yardmaster
+'{"stop":"A-101","permit_role":"driver"}
+~~D8{"backend":"dex","compilation-mode":"debug","has-checksums":false,"min-api":23,"sha-1":"abaab469b5ebd4dd2bb91ba0ed6f45277faae4ca","version":"8.6.2-dev"}

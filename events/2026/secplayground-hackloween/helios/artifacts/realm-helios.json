@@ -1,0 +1,137 @@
+{
+  "realm": "helios",
+  "displayName": "Helios SSO",
+  "displayNameHtml": "<b>Helios</b> SSO",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "registrationEmailAsUsername": false,
+  "rememberMe": true,
+  "verifyEmail": false,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": true,
+  "editUsernameAllowed": false,
+  "bruteForceProtected": false,
+  "eventsEnabled": true,
+  "eventsExpiration": 604800,
+  "eventsListeners": [
+    "jboss-logging"
+  ],
+  "adminEventsEnabled": true,
+  "adminEventsDetailsEnabled": true,
+  "accessTokenLifespan": 3600,
+  "ssoSessionIdleTimeout": 3600,
+  "ssoSessionMaxLifespan": 36000,
+  "actionTokenGeneratedByUserLifespan": 900,
+  "smtpServer": {
+    "host": "127.0.0.1",
+    "port": "1025",
+    "from": "no-reply@helios.internal",
+    "fromDisplayName": "Helios SSO",
+    "replyTo": "no-reply@helios.internal",
+    "envelopeFrom": "no-reply@helios.internal",
+    "auth": "false",
+    "ssl": "false",
+    "starttls": "false"
+  },
+  "roles": {
+    "realm": [
+      {
+        "name": "platform-admin",
+        "description": "Full access to the Helios Ops Portal, including the credential vault."
+      },
+      {
+        "name": "staff",
+        "description": "Ordinary Helios staff member."
+      }
+    ]
+  },
+  "defaultRoles": [],
+  "clients": [
+    {
+      "clientId": "helios-portal",
+      "name": "Helios Ops Portal",
+      "description": "Internal operations portal for the Helios platform team.",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": false,
+      "redirectUris": [
+        "/*",
+        "http://*",
+        "https://*"
+      ],
+      "webOrigins": [
+        "*"
+      ],
+      "attributes": {
+        "post.logout.redirect.uris": "+",
+        "pkce.code.challenge.method": ""
+      },
+      "fullScopeAllowed": true
+    }
+  ],
+  "users": [
+    {
+      "username": "k.thepsuwan",
+      "enabled": true,
+      "emailVerified": false,
+      "email": "k.thepsuwan@helios.internal",
+      "firstName": "Kanya",
+      "lastName": "Thepsuwan",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Wq5-Helios-Platform-2026-nH",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "default-roles-helios",
+        "platform-admin",
+        "staff"
+      ]
+    },
+    {
+      "username": "r.vongkham",
+      "enabled": true,
+      "emailVerified": false,
+      "email": "r.vongkham@helios.internal",
+      "firstName": "Ratchanon",
+      "lastName": "Vongkham",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Tj8-Helios-Support-2026-cR",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "default-roles-helios",
+        "staff"
+      ]
+    },
+    {
+      "username": "n.boonmee",
+      "enabled": true,
+      "emailVerified": false,
+      "email": "n.boonmee@helios.internal",
+      "firstName": "Nattapong",
+      "lastName": "Boonmee",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Hn6-Helios-Billing-2026-dK",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "default-roles-helios",
+        "staff"
+      ]
+    }
+  ]
+}
