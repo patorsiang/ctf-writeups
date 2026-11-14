@@ -102,5 +102,32 @@ class EasyReadyTests(unittest.TestCase):
         self.assertFalse(self.ready("| 2026-11-16 | x | crypto | p | F | 60 | 20 | yes | no | 0 | |"))
 
 
+class RobustnessTests(unittest.TestCase):
+    def test_blank_line_inside_table_does_not_drop_rows(self):
+        text = log(
+            "| 2026-11-16 | a | web | p | F | 30 | 20 | yes | no | 0 | |",
+            "",
+            "| 2026-11-17 | b | crypto | p | F | 30 | 20 | yes | no | 0 | |",
+        )
+        drills, problems = parse_log(text)
+        self.assertEqual([d.challenge for d in drills], ["a", "b"])
+        self.assertEqual(problems, [])
+
+    def test_row_missing_leading_pipe_is_reported(self):
+        text = log(
+            "2026-11-16 | a | web | p | F | 30 | 20 | yes | no | 0 | |",
+            "| 2026-11-17 | b | crypto | p | F | 30 | 20 | yes | no | 0 | |",
+        )
+        drills, problems = parse_log(text)
+        self.assertEqual([d.challenge for d in drills], ["b"])
+        self.assertEqual(len(problems), 1)
+        self.assertTrue(problems[0].startswith("line 7: not a table row"), problems[0])
+
+    def test_default_log_path_is_repo_relative(self):
+        import drill_stats
+        self.assertTrue(drill_stats.DEFAULT_LOG.is_absolute())
+        self.assertTrue(drill_stats.DEFAULT_LOG.exists())
+
+
 if __name__ == "__main__":
     unittest.main()

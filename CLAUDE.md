@@ -17,7 +17,7 @@ Plan: [training/women-tct-2026/README.md](training/women-tct-2026/README.md).
 - **F-track drills (no AI):** use `/ctf-hint` escalation only. No flags, no solving.
   Record the hint level (0–3) in the log. Hint ≥ 2 → add a 7-day re-solve.
 - **Sunday review:** copy `training/women-tct-2026/weekly/TEMPLATE.md` to
-  `weekly/<YYYY>-W<nn>.md` and fill it with the user from `drill_stats.py`.
+  `weekly/W<n>.md` (sprint week, the same label `drill_stats.py` prints) and fill it with the user from `drill_stats.py`.
   Update the README's easy-ready table.
 - **Never write the user's Prediction or Solve Log.**
 - **Don't install tools without asking.** `tools/check_kit.sh` only reports.

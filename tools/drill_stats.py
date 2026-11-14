@@ -14,7 +14,7 @@ CATEGORIES: tuple[str, ...] = (
     "web", "forensics", "re-pwn", "network", "mobile",
     "programming", "crypto", "misc", "ai-iot",
 )
-DEFAULT_LOG = Path("training/women-tct-2026/drill-log.md")
+DEFAULT_LOG = Path(__file__).resolve().parent.parent / "training/women-tct-2026/drill-log.md"
 COLUMNS = 11
 EASY_BOX = 30
 OVER_HOURS = 20
@@ -84,16 +84,17 @@ def parse_log(text: str) -> tuple[list[Drill], list[str]]:
     in_table = False
     for lineno, line in enumerate(text.splitlines(), start=1):
         stripped = line.strip()
+        if not in_table:
+            # Everything before the header row is legend text.
+            if stripped.startswith("|") and stripped.strip("|").split("|")[0].strip().lower() == "date":
+                in_table = True
+            continue
+        if not stripped or set(stripped) <= set("|-: "):
+            continue
         if not stripped.startswith("|"):
-            in_table = False
+            problems.append(f"line {lineno}: not a table row (missing leading '|')")
             continue
         cells = stripped.strip("|").split("|")
-        first = cells[0].strip().lower()
-        if first == "date":
-            in_table = True
-            continue
-        if not in_table or set(stripped) <= set("|-: "):
-            continue
         if len(cells) != COLUMNS:
             problems.append(f"line {lineno}: expected {COLUMNS} columns, got {len(cells)}")
             continue

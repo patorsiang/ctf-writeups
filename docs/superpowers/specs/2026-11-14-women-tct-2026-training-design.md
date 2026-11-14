@@ -96,7 +96,7 @@ training/women-tct-2026/
     2026-12-05-qualifier-mock.md   # 7 h, AI allowed
     2026-12-19-final-mock.md       # 6 h, no AI
   weekly/
-    2026-W47.md …  # Sunday review: what the log says, re-plan next week
+    W1.md …        # Sunday review (sprint week, as drill_stats prints): what the log says, re-plan next week
 notes/
   network.md       # new
   mobile.md        # new
