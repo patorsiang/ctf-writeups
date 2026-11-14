@@ -1,5 +1,7 @@
 # Learning Path
 
+> **Current focus:** the [Women TCT 2026 sprint](training/women-tct-2026/README.md) overrides this path until 2026-12-26.
+
 This path is meant to turn the repo into a study system. The goal is to grow from solving isolated beginner challenges to writing clear, repeatable, senior-level analysis.
 
 New structured practice should be tracked in [practice/cylabacademy](practice/cylabacademy). Older picoGym material remains in [practice/picogym](practice/picogym) as a legacy archive and can be linked into CyLab Academy learning paths when useful.

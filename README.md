@@ -25,6 +25,8 @@ This is not intended to be a dump of flags or copy-paste answers. The value is i
 
 ## Learning Path
 
+**Current focus:** [Women Thailand Cyber Top Talent 2026 training](training/women-tct-2026/README.md) (until 2026-12-26).
+
 Start with [LEARNING_PATH.md](LEARNING_PATH.md). It groups the repo into stages:
 
 1. **Foundations:** shell, Git hygiene, Python basics, file inspection, and writeup habits.
