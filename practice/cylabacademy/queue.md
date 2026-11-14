@@ -20,25 +20,27 @@ about 7 days after the solve redo it cold: no notes, no
 writeup, no AI, timer running. Record the result here and in the writeup's
 `Re-solve` line. A failed re-solve goes back in the queue for another 7 days.
 
+During the Women TCT 2026 sprint, a re-solve is logged as an F-track drill in `training/women-tct-2026/drill-log.md`. New re-solves come only from F-track drills at hint ≥ 2.
+
 | Due | Challenge | Link | Result |
 | --- | --- | --- | --- |
-| 2026-11-05 | CyLab Academy Bit-O-Asm-2 | [writeup](challenges/low-level-binary-intro/bit-o-asm-2/README.md) | |
-| 2026-11-05 | CyLab Academy Bit-O-Asm-1 | [writeup](challenges/low-level-binary-intro/bit-o-asm-1/README.md) | |
-| 2026-11-05 | CyLab Academy Picker I | [writeup](challenges/low-level-binary-intro/picker-i/README.md) | |
-| 2026-11-04 | CyLab Academy ASCII Numbers | [writeup](challenges/low-level-binary-intro/ascii-numbers/README.md) | |
-| 2026-11-01 | CyLab Academy First Find | [writeup](challenges/general-skills-in-ctfs/first-find/README.md) | |
-| 2026-11-01 | CyLab Academy Static Ain't Always Noise | [writeup](challenges/general-skills-in-ctfs/static-aint-always-noise/README.md) | |
-| 2026-11-01 | CyLab Academy plumbing | [writeup](challenges/general-skills-in-ctfs/plumbing/README.md) | |
-| 2026-10-31 | CyLab Academy Magikarp Ground Mission | [writeup](challenges/general-skills-in-ctfs/magikarp-ground-mission/README.md) | |
-| 2026-10-31 | CyLab Academy Nice netcat... | [writeup](challenges/general-skills-in-ctfs/nice-netcat/README.md) | |
-| 2026-10-28 | CyLab Academy Perceptron Train 3-Bit Parity | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-3-bit-parity/README.md) | |
-| 2026-10-20 | CyLab Academy Perceptron Train XOR | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xor/README.md) | |
-| 2026-10-20 | CyLab Academy Perceptron Train XNOR | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xnor/README.md) | |
-| 2026-10-20 | CyLab Academy Perceptron Train Hole in Middle | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-hole-in-middle/README.md) | |
-| 2026-10-08 | LA CTF 2025 Bigram Times | [writeup](../../events/2025/la-ctf/crypto/bigram-times/README.md) | |
-| 2026-10-08 | LA CTF 2025 Crypto Civilization | [writeup](../../events/2025/la-ctf/crypto/crypto-civilization/README.md) | |
-| 2026-10-08 | picoGym EVEN RSA CAN BE BROKEN??? | [writeup](../picogym/even-rsa-can-be-broken/README.md) | |
-| 2026-10-08 | picoGym Mini RSA | [writeup](../picogym/mini-rsa/README.md) | |
+| 2026-11-26 | CyLab Academy Bit-O-Asm-2 | [writeup](challenges/low-level-binary-intro/bit-o-asm-2/README.md) | |
+| 2026-11-26 | CyLab Academy Bit-O-Asm-1 | [writeup](challenges/low-level-binary-intro/bit-o-asm-1/README.md) | |
+| 2026-11-26 | CyLab Academy Picker I | [writeup](challenges/low-level-binary-intro/picker-i/README.md) | |
+| 2026-11-26 | CyLab Academy ASCII Numbers | [writeup](challenges/low-level-binary-intro/ascii-numbers/README.md) | |
+| 2026-11-01 | CyLab Academy First Find | [writeup](challenges/general-skills-in-ctfs/first-find/README.md) | Dropped 2026-11-15 — out of sprint scope (Women TCT 2026) |
+| 2026-11-01 | CyLab Academy Static Ain't Always Noise | [writeup](challenges/general-skills-in-ctfs/static-aint-always-noise/README.md) | Dropped 2026-11-15 — out of sprint scope (Women TCT 2026) |
+| 2026-11-01 | CyLab Academy plumbing | [writeup](challenges/general-skills-in-ctfs/plumbing/README.md) | Dropped 2026-11-15 — out of sprint scope (Women TCT 2026) |
+| 2026-10-31 | CyLab Academy Magikarp Ground Mission | [writeup](challenges/general-skills-in-ctfs/magikarp-ground-mission/README.md) | Dropped 2026-11-15 — out of sprint scope (Women TCT 2026) |
+| 2026-10-31 | CyLab Academy Nice netcat... | [writeup](challenges/general-skills-in-ctfs/nice-netcat/README.md) | Dropped 2026-11-15 — out of sprint scope (Women TCT 2026) |
+| 2026-10-28 | CyLab Academy Perceptron Train 3-Bit Parity | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-3-bit-parity/README.md) | Dropped 2026-11-15 — out of sprint scope (Women TCT 2026) |
+| 2026-10-20 | CyLab Academy Perceptron Train XOR | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xor/README.md) | Dropped 2026-11-15 — out of sprint scope (Women TCT 2026) |
+| 2026-10-20 | CyLab Academy Perceptron Train XNOR | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-xnor/README.md) | Dropped 2026-11-15 — out of sprint scope (Women TCT 2026) |
+| 2026-10-20 | CyLab Academy Perceptron Train Hole in Middle | [writeup](challenges/ai-foundations-i-the-lost-book-of-perceptrons/perceptron-train-hole-in-middle/README.md) | Dropped 2026-11-15 — out of sprint scope (Women TCT 2026) |
+| 2026-11-19 | LA CTF 2025 Bigram Times | [writeup](../../events/2025/la-ctf/crypto/bigram-times/README.md) | |
+| 2026-11-19 | LA CTF 2025 Crypto Civilization | [writeup](../../events/2025/la-ctf/crypto/crypto-civilization/README.md) | |
+| 2026-11-19 | picoGym EVEN RSA CAN BE BROKEN??? | [writeup](../picogym/even-rsa-can-be-broken/README.md) | |
+| 2026-11-19 | picoGym Mini RSA | [writeup](../picogym/mini-rsa/README.md) | |
 
 ## Done Recently
 
