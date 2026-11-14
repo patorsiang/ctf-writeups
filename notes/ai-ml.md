@@ -1,5 +1,9 @@
 # AI and ML Notes
 
+## Triage playbook (easy, ≤1 page)
+
+Fill from drills — each new line must cite the drill that taught it.
+
 ## What A Single Perceptron Can Separate
 
 A 2D perceptron scores a point with `w1x + w2y + b` and uses zero as its decision boundary. That boundary is one straight line. Training changes the line's angle and position; it does not turn the line into a curve.

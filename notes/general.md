@@ -3,7 +3,9 @@
 Command-line fluency, number bases, file inspection — the substrate every
 other category sits on.
 
-## Beginner Checklist
+## Triage playbook (easy, ≤1 page)
+
+Fill from drills — each new line must cite the drill that taught it.
 
 - `ls -la` before anything else: hidden files (`.`-prefixed) are a
   standard hiding spot and invisible to a bare `ls`.

@@ -1,6 +1,8 @@
 # Web Notes
 
-## Beginner Checklist
+## Triage playbook (easy, ≤1 page)
+
+Fill from drills — each new line must cite the drill that taught it.
 
 - Read HTML, JavaScript, and network requests before guessing.
 - Look for client-side secrets, hidden routes, cookies, and weak validation.

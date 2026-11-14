@@ -1,6 +1,8 @@
 # Pwn Notes
 
-## Beginner Checklist
+## Triage playbook (easy, ≤1 page)
+
+Fill from drills — each new line must cite the drill that taught it.
 
 - Identify architecture, protections, input path, and crash behavior.
 - Keep the original binary, source, and exploit script in the same challenge folder.

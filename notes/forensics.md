@@ -1,6 +1,8 @@
 # Forensics Notes
 
-## Beginner Checklist
+## Triage playbook (easy, ≤1 page)
+
+Fill from drills — each new line must cite the drill that taught it.
 
 - Start with file type, magic bytes, metadata, and embedded files.
 - Preserve original artifacts.

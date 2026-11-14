@@ -1,6 +1,8 @@
 # Crypto Notes
 
-## Beginner Checklist
+## Triage playbook (easy, ≤1 page)
+
+Fill from drills — each new line must cite the drill that taught it.
 
 - Identify whether data is encoded, encrypted, hashed, or compressed.
 - Check common encodings first: hex, base64, URL encoding, ASCII, binary.
