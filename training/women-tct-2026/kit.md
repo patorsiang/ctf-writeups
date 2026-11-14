@@ -14,9 +14,9 @@ Get the missing list down to zero by **2026-11-21** (W1). Re-check on 12-11 and 
 | forensics | exiftool | `exiftool -ver` |
 | forensics | binwalk | `binwalk --help` |
 | forensics | foremost | `foremost -V` |
-| forensics | volatility3 | `vol -h` |
+| forensics | volatility3 | `vol -h` (kit venv) |
 | re-pwn | Ghidra | `ghidraRun` opens |
-| re-pwn | gdb + pwndbg, checksec | inside the Linux container (below): `gdb -q -ex quit` |
+| re-pwn | gdb-multiarch + pwndbg, qemu-user, checksec | inside `ctf-pwn-box` (below) |
 | re-pwn | pwntools | `python -c "import pwn"` (kit venv) |
 | network | Wireshark / tshark | `tshark -v` |
 | mobile | jadx | `jadx --version` |
@@ -24,13 +24,18 @@ Get the missing list down to zero by **2026-11-21** (W1). Re-check on 12-11 and 
 | programming | pwntools (nc scripting) | `python -c "import pwn"` |
 | crypto | pycryptodome, sympy, gmpy2 | `python -c "import Crypto, sympy, gmpy2"` |
 | crypto | SageMath (optional; it's large) | `sage -v` |
-| misc | CyberChef (offline HTML) | open `~/ctf-kit/cyberchef/CyberChef.html` |
-| misc | steghide, zsteg | `steghide --version`, `zsteg -h` |
+| misc | CyberChef (offline HTML) | open `~/ctf-kit/cyberchef/CyberChef_v11.5.0.html` |
+| misc | steghide (in `ctf-pwn-box`; not in Homebrew), zsteg | `docker run --rm -v "$PWD":/work ctf-pwn-box steghide --version`, `zsteg -h` |
 | ai-iot | binwalk, strings | as above |
 
-**Pwn on a Mac:** gdb doesn't run natively on Apple Silicon. Use a Linux x86-64
-container instead, with gdb, pwndbg, checksec and pwntools inside it. Docker is
-already installed. Build the image in W1, while there's internet.
+**Pwn on a Mac:** gdb doesn't debug natively on Apple Silicon, and gdb inside an
+emulated x86 container is unreliable. So `ctf-pwn-box` (`tools/pwn-box/Dockerfile`)
+is a native arm64 Ubuntu container: x86-64 binaries run under `qemu-x86_64`, and
+`gdb-multiarch`/pwndbg attach to qemu's gdb stub. Usage is in the Dockerfile header.
+Build it with `docker build -t ctf-pwn-box tools/pwn-box`.
+
+**Python:** `source ~/.venvs/ctf/bin/activate` (Python 3.12, chosen because
+pwntools' native deps are most reliable there).
 
 ## Offline
 
