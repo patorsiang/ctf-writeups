@@ -4,7 +4,7 @@
 
 Fill from drills — each new line must cite the drill that taught it.
 
-First look at an APK (tools from `training/women-tct-2026/kit.md`):
+First look at an APK (tools checked by `tools/check_kit.sh`):
 
 - `file app.apk`: confirm it's a zip/APK.
 - `jadx -d out app.apk`: decompile it to Java source and resources.

@@ -4,7 +4,7 @@
 
 Fill from drills — each new line must cite the drill that taught it.
 
-First look at a capture (tools from `training/women-tct-2026/kit.md`):
+First look at a capture (tools checked by `tools/check_kit.sh`):
 
 - `tshark -r cap.pcap -q -z io,phs`: which protocols are in the capture.
 - `tshark -r cap.pcap -q -z conv,tcp`: who talks to whom, and how much.

@@ -3,7 +3,7 @@
 ## Metadata
 
 - Platform: picoGym (picoCTF 2019)
-- Drill: Women TCT 2026, network, F-track (no AI), 30 min box
+- Drill: network, F-track (no AI), 30 min box
 - Category: Forensics (network), 150 points
 - Difficulty: Unknown (third-party writeups say Easy or Medium)
 - Status: TODO

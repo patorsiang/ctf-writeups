@@ -1,6 +1,6 @@
 # Learning Path
 
-> **Current focus:** the [Women TCT 2026 sprint](training/women-tct-2026/README.md) overrides this path until 2026-12-26.
+> **Current focus:** a competition sprint overrides this path until 2026-12-26.
 
 This path is meant to turn the repo into a study system. The goal is to grow from solving isolated beginner challenges to writing clear, repeatable, senior-level analysis.
 

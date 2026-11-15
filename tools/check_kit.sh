@@ -1,6 +1,6 @@
 #!/bin/sh
 # Report which competition-kit tools are present. Never installs anything.
-# Exit 0 = all present, 1 = something missing. See training/women-tct-2026/kit.md.
+# Exit 0 = all present, 1 = something missing.
 
 KIT_PY="${KIT_VENV:-$HOME/.venvs/ctf}/bin/python"
 [ -x "$KIT_PY" ] || KIT_PY=python3
