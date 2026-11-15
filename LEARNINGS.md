@@ -49,3 +49,16 @@ files for PAT/AWS-key/credential-file shapes; gitignore anything regenerable
 from an already-ignored zip/apk, and expect to use GitHub's "allow this
 secret" unblock link for load-bearing fake values that must stay (e.g. a key
 a solve script brute-forces against).
+
+### 2026-11-15 — training setup — drill scaffolded for a platform that had moved
+The first sprint drill was set up as `practice/picogym/shark-on-wire-1/` with a
+play.picoctf.org link, taken from memory. picoGym practice had already moved to
+CyLab Academy, and `practice/cylabacademy/README.md` in this repo says so. The
+user caught it; the scaffold was dropped before any drilling started.
+
+**Why it matters:** a wrong link or folder costs the first minutes of a timed
+drill, and the slip came from trusting memory over the repo's own notes.
+
+**Do differently:** set up a drill from the repo's current platform notes and the
+drill bank, and record the challenge URL in the README's `Link:` field at setup.
+Open the link once before calling the drill ready.
