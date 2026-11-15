@@ -3,6 +3,7 @@
 ## Metadata
 
 - Platform: CyLab Academy
+- Link: https://learn.cylabacademy.org/library/<id>
 - Learning Path:
 - Category:
 - Difficulty: Unknown
