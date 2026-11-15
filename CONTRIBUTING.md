@@ -51,3 +51,14 @@ that the challenge got solved.
 - Prefer short, reproducible commands and scripts over vague prose.
 - In notebooks, keep cells ordered from observation to solution; avoid leaving unrelated scratch cells in the final writeup.
 - If a challenge does not need a notebook, keep the detailed writeup in `README.md` and mark `main.ipynb` as not applicable.
+
+## Secret Scan
+
+After cloning, run `bash tools/install_hooks.sh` once. It links
+`githooks/pre-commit` into `.git/hooks`, next to the Git LFS hooks, and every
+commit is then scanned with gitleaks (staged changes only).
+
+- Blocked by a **real** secret: unstage it, remove it, rotate it.
+- Blocked by **fake CTF data**: add that finding's `Fingerprint:` line to
+  `.gitleaksignore` with a comment. One finding at a time, never a whole folder.
+- Tests: `bash tools/test_secret_hook.sh`.

@@ -1,0 +1,24 @@
+#!/bin/sh
+# secret-scan pre-commit hook (managed by tools/install_hooks.sh).
+# Blocks a commit when staged changes contain something that looks like a secret.
+# CTF evidence often holds deliberately fake keys: allow ONE finding at a time by
+# adding its Fingerprint to .gitleaksignore with a comment. Never allow a folder.
+
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "secret-scan: gitleaks not found, commit blocked (fail closed)." >&2
+  echo "  Install it (brew install gitleaks), or skip once on purpose: git commit --no-verify" >&2
+  exit 1
+fi
+
+if gitleaks git --staged --no-banner --redact --verbose --exit-code 1 >&2; then
+  exit 0
+fi
+
+cat >&2 <<'MSG'
+
+secret-scan: commit blocked, staged changes look like they contain a secret.
+  Real secret?  Unstage it (git restore --staged <file>), remove it, and rotate it.
+  Fake CTF data? Add the finding's "Fingerprint:" line above to .gitleaksignore,
+                 with a comment saying what it is, then commit again.
+MSG
+exit 1
